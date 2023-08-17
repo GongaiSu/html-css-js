@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      background-color: #f00;
+      height: 300px;
+      /* 只能对行内级元素进行对齐,如果div没有进行转换为行内级元素时,div是块级元素,无法进行对齐 */
+      text-align: center;
+    }
+    .centent{
+      background-color: #0f0;
+      height: 200px;
+      width: 200px;
+      /* 将div设置为行内级元素,使其可以使用text-align的对齐属性 */
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="centent"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .box{
+      color: #f00;
+      /* border不具备继承性,所以后代元素无法继承 */
+      border: 2px solid purple;
+    }
+    p{
+      /* 使用inherit(继承)进行强制继承 */
+      border: inherit;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="box">
+
+    <p>这是一个p元素</p>
+    <h1>这是一个h1</h1>
+  </div>
+</body>
+</html>

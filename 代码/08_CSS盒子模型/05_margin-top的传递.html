@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    .box{
+      width:300px;
+      height:300px;
+      background-color: #f00;
+      /* 设置border边框可以取消传递 */
+      /* border: 1px solid transparent; */
+      /* 触发BFC 取消传递 */
+      /* overflow: auto; */
+      /* 设置padding可以取消值传递,但是会撑大元素,需要使用box-sizing设置border-box */
+      padding-top: 50px;
+      box-sizing: border-box;
+    }
+    .content{
+      width:100px;
+      height:100px;
+      background-color: #0f0;
+      /* 值传递给了父元素 */
+      /* margin-top: 50px; */
+      /* 左右不会传递 */
+      /* margin-left: 50px;  */
+    }
+  </style>
+</head>
+<body>
+  
+
+
+
+  <div class="box">
+    <div class="content"></div>
+  </div>
+</body>
+</html>

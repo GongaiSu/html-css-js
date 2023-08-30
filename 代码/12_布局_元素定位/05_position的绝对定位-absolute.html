@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .box{
+      /* box的div是strong的祖先元素，并且设置了定位，所以定位参考对象是box的div元素 */
+      position: relative;
+      width: 400px;
+      height: 400px;
+      background-color: #f00;
+    }
+    strong{
+      position: absolute;
+      /* 在没有祖先元素定位的情况下，定位参考对象是视口 */
+      right: 30px;
+    }
+    img{
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  
+
+
+  <div class="box">
+    <span>我是一个sapn</span>
+    <strong>我是一个strong</strong>
+    <img src="../images/1390.jpg" alt="">
+    <div>我是一个div</div>
+  </div>
+  
+</body>
+</html>

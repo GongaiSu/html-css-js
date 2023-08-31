@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .box{
+      width: 140px;
+      margin: 0 auto;
+    }
+    
+    /* 进行抽离，复用 */
+    .sprite_01{
+      background-image: url(../images/music-sprite-1.png);
+      display: inline-block;
+    }
+    .sprite_02{
+      background-image: url(../images/music-sprite-icon-1.png);
+      display: inline-block;
+    }
+
+    .sprite_02_music{
+      width: 14px;
+      height: 11px;
+      background-position: 0 -24px;
+    }
+    .sprite_02_play{
+      width: 16px;
+	    height: 17px;
+      background-position: 0 0;
+    }
+
+    .box .content{
+      position: relative;
+    }
+    .box .content img{
+      vertical-align: top;
+    }
+    .box .content .img_shadow{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      /* background-image: url(../images/music-sprite-1.png); */
+      background-position: 0 0;  
+    }
+    .box .content .info{
+      position: absolute;
+      height: 27px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      /* background-image: url(../images/music-sprite-1.png); */
+      background-position: 0 -537px;
+      color: #ccc;
+      line-height: 27px;
+      padding-left: 10px;
+    }
+    .box .content .info .music{
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      /* width: 14px;
+      height: 11px;
+      background-image: url(../images/music-sprite-icon-1.png);
+      background-position: 0 -24px; */
+    }
+    .box .content .info .count{
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    .box .content .info .bofang{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      right: 10px;
+      /* display: inline-block;
+      width: 16px;
+	    height: 17px;
+      background-image: url(../images/music-sprite-icon-1.png);
+      background-position: 0 0; */
+    }
+    
+
+
+    .box a{
+      margin-top: 5px;
+      display: inline-block;
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+    }
+    .box a:hover{
+      text-decoration: underline;
+      color: #000;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  
+
+
+
+
+  <div class="box">
+    <div class="content">
+      <img src="../images/music-1.jpg" alt="">
+      <a href="#" class="sprite_01 img_shadow"></a>
+      <div class="sprite_01 info">
+        <i class="sprite_02 sprite_02_music music"></i>
+        <span class="count">12688万</span>
+        <i class="sprite_02 sprite_02_play bofang"></i>
+      </div>
+      <div></div>
+    </div>
+    <a href="#">
+      纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+    </a>
+  </div>
+</body>
+</html>

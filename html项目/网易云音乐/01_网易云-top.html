@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .top{
+      height: 70px;
+      box-sizing: border-box;
+      background: #242424;
+      border: 1px solid #000;
+    }
+    .topbar{
+      display: flex;
+
+      justify-content: space-between;
+
+      height: 69px;
+
+      line-height: 69px;
+      /* background: #f00;  */
+    }
+
+    .topbar .bar-left{
+      display: flex;
+    }
+    .topbar .bar-left .logo{
+      background: url(./images/topbar.png) no-repeat 0 0;
+    }
+     .topbar .bar-left .logo a{
+       display: block;
+       width: 157px;
+       padding-right: 20px;
+       text-indent: -9999px;
+     }
+
+     .topbar .bar-left .list{
+       display: flex;
+     }
+     .topbar .bar-left .list a{
+       position: relative;
+       display: block;
+       color: #ccc;
+       font-size: 14px;
+       padding: 0 19px;
+     }
+     .topbar .bar-left .list a:hover,
+     .topbar .bar-left .list a.active{
+       color: #fff;
+       background: #000;
+     }
+     .topbar .bar-left .list a.active::after{
+       position: absolute;
+       display: inline-block;
+       content: "";
+       width: 12px;
+       height: 7px;
+       bottom: -1px;
+       left: 0;
+       right: 0;
+       margin: 0 auto;
+       background: url(./images/topbar.png) -226px 0;;
+     }
+  </style>
+</head>
+<body>
+  
+
+
+  <div class="top">
+    <div class="topbar wapper_01">
+
+      <div class="bar-left">
+        <h1 class="logo">
+          <a href="#">网易云音乐</a>
+        </h1>
+        <ul class="list">
+          <li class="item"><a  class="active" href="#">发现音乐</a></li>
+          <li class="item"><a href="#">我的音乐</a></li>
+          <li class="item"><a href="#">关注</a></li>
+          <li class="item"><a href="#">商城</a></li>
+          <li class="item"><a href="#">音乐人</a></li>
+          <li class="item"><a href="#">云推歌</a></li>
+          <li class="item"><a href="#">下载客户端</a></li>
+        </ul>
+      </div>
+      <div class="bar-right">
+        bar_right
+      </div>
+    </div>
+    <div class="topnav"></div>
+  </div>
+</body>
+</html>

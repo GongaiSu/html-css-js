@@ -1,0 +1,17 @@
+body,h1,h2,h3,ul,li{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font :12px Arial, Helvetica, sans-serif ;
+  color: #333;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+ul,li{
+  list-style: none;
+}

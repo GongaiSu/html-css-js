@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .banner{
+      height: 285px;
+      background: url(./images/banner_bg_01.jpg) center center/6000px;
+    }
+    
+    .banner .area-left {
+      position: relative;
+      width: 730px;
+    }
+    .banner .area-left .img-list {
+      display: flex;
+      overflow: hidden;
+      
+    }
+    .banner .area-left .img-list li {
+      flex-shrink: 0;
+    }
+    .banner .area-left .img-list .item{
+      display: block;
+      
+    }
+    .area-left .img-list .item img{
+      height: 285px;
+      width: 100%;
+    }
+
+    .banner .area-left .bost-list{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      bottom: 5px;
+      left:  0;
+      right: 0;
+      margin: 0 auto;
+
+    }
+    .banner.area-left .bost-list li{
+      display: block;
+      margin: 0 2px;
+    }
+    .banner .area-left .bost-list .item{
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url(./images/banner_sprit_01.png) 3px -343px;
+    }
+    .banner .area-left .bost-list .item:hover,
+    .banner .area-left .bost-list .item.active{
+      background-position: -16px -343px;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="banner">
+    <div class="area wapper_03">
+      <div class="area-left">
+        <ul class="img-list">
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_01.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_01.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_01.jpg" alt="">
+            </a>
+          </li>
+          
+        </ul>
+        <ul class="bost-list">
+          <li><a href="#" class="item active"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+        </ul>
+      </div>
+      <div class="area-right"></div>
+      
+    </div>
+  </div>
+
+
+</body>
+</html>

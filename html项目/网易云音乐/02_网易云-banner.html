@@ -13,6 +13,9 @@
       background: url(./images/banner_bg_01.jpg) center center/6000px;
     }
     
+    .banner .area{
+      position: relative;
+    }
     .banner .area-left {
       position: relative;
       width: 730px;
@@ -58,6 +61,59 @@
     .banner .area-left .bost-list .item.active{
       background-position: -16px -343px;
     }
+
+
+
+    .banner .area .area-right{
+      position: absolute;
+      top :0;
+      bottom: 0;
+      right: -1px;
+      width: 254px;
+      height: 285px;
+      background: url(./images/download-sprit.png) 0 0;
+    }
+
+      .banner .area .area-right .download{
+        display: block;
+        width: 215px;
+        height: 56px;
+        margin: 186px 0 0 19px;
+        text-indent: -9999px;
+      }
+      .banner .area .area-right .download:hover{ 
+         background: url(./images/download-sprit.png) 0 -290px; 
+      } 
+      .banner .area .area-right span{
+        display: block;
+        color: #8d8d8d;
+        margin: 10px auto;
+        text-align: center;
+      }
+
+      .banner .area .control{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        width: 37px;
+        height: 63px;
+        background: url(./images/banner_sprit_01.png);
+      }
+      .banner .area .left{
+        left: -70px;
+        background-position: 0 -360px;
+      }
+      .banner .area .left:hover{
+        background-position: 0 -430px;
+      }
+      .banner .area .right{
+        right: -70px;
+        background-position: 0 -508px;
+      }
+      .banner .area .right:hover{
+        background-position: 0 -578px;
+      }
   </style>
 </head>
 <body>
@@ -97,7 +153,15 @@
           <li><a href="#" class="item"></a></li>
         </ul>
       </div>
-      <div class="area-right"></div>
+      <div class="area-right">
+
+        <a class="download" href="#">
+          下载客户端
+        </a>
+        <span>PC 安卓 iPhone WP iPad Mac 六大客户端</span>
+      </div>
+      <a class="control left" href="#"></a>
+      <a class="control right" href="#"></a>
       
     </div>
   </div>

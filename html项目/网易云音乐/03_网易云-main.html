@@ -7,6 +7,9 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/header.css">
+
+  <link rel="stylesheet" href="./css/main-right.css">
   <style>
     .main .area{
       display: flex;
@@ -16,40 +19,277 @@
       border-width: 0 1px;
       background: url(./images/mian-bg.png);
     }
+    
+
     .main .area .area-left{
       width: 729px;
-    }
-    .main .area .area-rigth{
-      width: 250px;
+      padding: 20px 20px 40px;
     }
 
-    .main .area .area-rigth .user-login{
-      width: 250px;
-      height: 126px;
-      background: url(./images/main_sprit.png) 0 0;
+
+    .rocommend-section .list{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 2px;
     }
-    .main .area .area-rigth .user-login p{
-      width: 205px;
+    .rocommend-section .list .item{
+      
+      margin-bottom: 20px;
+     
+    }
+
+
+    .rocommend-section .list .item .box{
+      width: 140px;
       margin: 0 auto;
-      padding: 16px 0;
-      font-size: 12px;
-      color: #666;
-      line-height: 22px;
     }
-    .main .area .area-rigth .user-login a{
+    
+    /* 进行抽离，复用 */
+    .sprite_01{
+      background-image: url(./images/music-sprite-1.png);
+      display: inline-block;
+    }
+    .sprite_02{
+      background-image: url(./images/music-sprite-icon-1.png);
+      display: inline-block;
+    }
+
+    .sprite_02_music{
+      width: 14px;
+      height: 11px;
+      background-position: 0 -24px;
+    }
+    .sprite_02_play{
+      width: 16px;
+	    height: 17px;
+      background-position: 0 0;
+    }
+
+    .rocommend-section .list .item .box .content{
+      position: relative;
+    }
+    .rocommend-section .list .item .box .content img{
+      vertical-align: top;
+    }
+    .rocommend-section .list .item .box .content .img_shadow{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      /* background-image: url(../images/music-sprite-1.png); */
+      background-position: 0 0;  
+    }
+    .rocommend-section .list .item .box .content .info{
+      position: absolute;
+      height: 27px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      /* background-image: url(../images/music-sprite-1.png); */
+      background-position: 0 -537px;
+      color: #ccc;
+      line-height: 27px;
+      padding-left: 10px;
+    }
+    .rocommend-section .list .item .box .content .info .music{
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      /* width: 14px;
+      height: 11px;
+      background-image: url(../images/music-sprite-icon-1.png);
+      background-position: 0 -24px; */
+    }
+    .rocommend-section .list .item .box .content .info .count{
+      margin-left: 5px;
+      font-size: 12px;
+    }
+    .rocommend-section .list .item .box .content .info .bofang{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      right: 10px;
+      /* display: inline-block;
+      width: 16px;
+	    height: 17px;
+      background-image: url(../images/music-sprite-icon-1.png);
+      background-position: 0 0; */
+    }
+    
+
+
+    .rocommend-section .list .item .box a{
+      
+      margin-top: 5px;
+      display: inline-block;
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+    }
+    .rocommend-section .list .item .box a .ican-radio{
+      position: relative;
+      top: 2px;
+    }
+    .rocommend-section .list .item .box a:hover{
+      text-decoration: underline;
+      color: #000;
+      font-size: 14px;
+    }
+
+
+    .disc-section .content{
+      position: relative;
+      height: 186px;
+      box-sizing: border-box;
+      border: 1px solid #d3d3d3;
+      margin: 20px 0;
+    }
+
+    .disc-section .content .icon-left{
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+      top: 71px;
+      background: url(./images/index_sprit.png) no-repeat -260px -75px;
+    }
+
+    .disc-section .content .icon-right{
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      right: 0;
+      top: 71px;
+      background: url(./images/index_sprit.png) no-repeat -300px -75px;
+    }
+
+    .disc-section .content .inner{
+      height: 100%;
+      box-sizing: border-box;
+      border: 1px solid #fff;
+      padding: 0 20px;
+      background: #f5f5f5;
+    }
+
+    .disc-section .content .inner .roller{
+      display: flex;
+      height: 100%;
+      overflow: hidden;
+    }
+    .disc-section  .inner .roller .list{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      flex-shrink: 0;
+    }
+    .disc-section  .inner .roller .list .item{
+      
+      width: 118px;
+      height: 150px;
+      background: url(./images/index_sprit.png) no-repeat -260px 100px;
+    }
+    .disc-section  .inner  .list .item .album{
+      position: relative;
+    }
+    .disc-section  .inner  .list .item .cover{
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: url(./images/music-sprite-1.png) no-repeat 0 -570px;
+    }
+
+    .disc-section  .inner  .list .item .cover:hover+.play{
       display: block;
-      width: 100px;
-      height: 31px;
-      margin: 0 auto;
-      font-size: 12px;
-      text-shadow: 0 1px 0 #8a060b;
-      color: #fff;
-      line-height: 31px;
-      text-align: center;
-      background: url(./images/main_sprit.png) 0 -195px;
     }
-    .main .area .area-rigth .user-login a:hover{
-      background-position: -110px -195px;
+    .disc-section  .inner  .list .item .play{
+      display: none;
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      right: 25px;
+      bottom: 5px;
+      background: url(./images/music-sprite-icon-1.png) no-repeat 0 -85px;
+    }
+
+    .disc-section  .inner  .list .item .title{
+      display: block;
+      width: 90%;
+      margin-top: 10px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .disc-section  .inner  .list .item .name{
+      display: block;
+      margin-top: 5px;
+      color: #999;
+    }
+    .disc-section  .inner  .list .item .title:hover,
+    .disc-section  .inner  .list .item .name:hover{
+      text-decoration: underline;
+    }
+
+    .rank-section .content{
+      display: flex;
+      height: 472px;
+      margin-top: 20px;
+      background: url(./images/index_bill.png);
+    }
+
+    .rank-section .content dl{
+      width: 230px;
+      
+    }
+
+    .rank-section .content  .header{
+      display: flex;
+      padding: 20px 0 0 20px;
+    }
+    .rank-section .content  .header .album{
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    .rank-section .content  .header .album img{
+      width: 100%;
+      height: 100%;
+    }
+
+    .rank-section .content  .header .cover{
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: url(./images/music-sprite-1.png) no-repeat -145px -57px; 
+    }
+    .rank-section .content  .header .info{
+      margin: 5px 0 0 10px;
+    }
+
+    .rank-section .content  .header .op{
+      margin-top: 10px;
+    }
+    .rank-section .content  .header .op .btn{
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background: url(./images/index_sprit.png) no-repeat;
+    }
+    .rank-section .content  .header .op .btn.play{
+      background-position: -267px -205px;
+    }
+    .rank-section .content .header .op .btn.hover {
+      margin-left: 10px;
+      background-position: -300px -205px;
     }
   </style>
 </head>
@@ -60,12 +300,392 @@
   <div class="main">
     <div class="area wapper_02">
 
-      <div class="area-left"></div>
+      <div class="area-left">
+        <div class="rocommend-section">
+          <div class="header_type_02">
+            <div class="left-area">
+              <a href="#" class="title">
+                热门推荐
+              </a>
+              <ul class="keyword">
+                <li>
+                  <a class="item" href="#">华语</a>
+                </li>
+                <li class="line">
+                  |
+                </li>
+                <li>
+                  <a class="item" href="#">流行</a>
+                </li>
+                <li class="line">
+                  |
+                </li>
+                <li>
+                  <a class="item" href="#">摇滚</a>
+                </li>
+                <li class="line">
+                  |
+                </li>
+                <li>
+                  <a class="item" href="#">民谣</a>
+                </li>
+                <li class="line">
+                  |
+                </li>
+                <li>
+                  <a class="item" href="#">电子</a>
+                </li>
+              </ul>
+            </div>
+            <div class="rigth-area">
+              <a href="#" class="more">更多</a>
+            </div>
+
+            
+          </div>
+          <div class="list">
+            <div class="item">
+              <div class="box">
+                <div class="content">
+                  <img src="./images/music-1.jpg" alt="">
+                  <a href="#" class="sprite_01 img_shadow"></a>
+                  <div class="sprite_01 info">
+                    <i class="sprite_02 sprite_02_music music"></i>
+                    <span class="count">12688万</span>
+                    <i class="sprite_02 sprite_02_play bofang"></i>
+                  </div>
+                  <div></div>
+                </div>
+                <a href="#">
+                  纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="content">
+                  <img src="./images/music-1.jpg" alt="">
+                  <a href="#" class="sprite_01 img_shadow"></a>
+                  <div class="sprite_01 info">
+                    <i class="sprite_02 sprite_02_music music"></i>
+                    <span class="count">12688万</span>
+                    <i class="sprite_02 sprite_02_play bofang"></i>
+                  </div>
+                  <div></div>
+                </div>
+                <a href="#">
+                  纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="content">
+                  <img src="./images/music-1.jpg" alt="">
+                  <a href="#" class="sprite_01 img_shadow"></a>
+                  <div class="sprite_01 info">
+                    <i class="sprite_02 sprite_02_music music"></i>
+                    <span class="count">12688万</span>
+                    <i class="sprite_02 sprite_02_play bofang"></i>
+                  </div>
+                  <div></div>
+                </div>
+                <a href="#">
+                  纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="content">
+                  <img src="./images/music-1.jpg" alt="">
+                  <a href="#" class="sprite_01 img_shadow"></a>
+                  <div class="sprite_01 info">
+                    <i class="sprite_02 sprite_02_music music"></i>
+                    <span class="count">12688万</span>
+                    <i class="sprite_02 sprite_02_play bofang"></i>
+                  </div>
+                  <div></div>
+                </div>
+                <a href="#">
+                  纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="content">
+                  <img src="./images/music-1.jpg" alt="">
+                  <a href="#" class="sprite_01 img_shadow"></a>
+                  <div class="sprite_01 info">
+                    <i class="sprite_02 sprite_02_music music"></i>
+                    <span class="count">12688万</span>
+                    <i class="sprite_02 sprite_02_play bofang"></i>
+                  </div>
+                  <div></div>
+                </div>
+                <a href="#">
+                  纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="content">
+                  <img src="./images/music-1.jpg" alt="">
+                  <a href="#" class="sprite_01 img_shadow"></a>
+                  <div class="sprite_01 info">
+                    <i class="sprite_02 sprite_02_music music"></i>
+                    <span class="count">12688万</span>
+                    <i class="sprite_02 sprite_02_play bofang"></i>
+                  </div>
+                  <div></div>
+                </div>
+                <a href="#">
+                  纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="content">
+                  <img src="./images/music-1.jpg" alt="">
+                  <a href="#" class="sprite_01 img_shadow"></a>
+                  <div class="sprite_01 info">
+                    <i class="sprite_02 sprite_02_music music"></i>
+                    <span class="count">12688万</span>
+                    <i class="sprite_02 sprite_02_play bofang"></i>
+                  </div>
+                  <div></div>
+                </div>
+                <a href="#">
+                  <i class="iconall_sprit iconall_sprit_radio ican-radio"></i>
+                  纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="content">
+                  <img src="./images/music-1.jpg" alt="">
+                  <a href="#" class="sprite_01 img_shadow"></a>
+                  <div class="sprite_01 info">
+                    <i class="sprite_02 sprite_02_music music"></i>
+                    <span class="count">12688万</span>
+                    <i class="sprite_02 sprite_02_play bofang"></i>
+                  </div>
+                  <div></div>
+                </div>
+                <a href="#">
+                  纯音乐 轻音乐 解压 学习 刷题 睡觉 御用
+                </a>
+              </div>
+            </div>
+            
+          </div>
+      </div>
+        <div class="disc-section">
+          <div class="header_type_02">
+            <div class="left-area">
+              <a href="#" class="title">
+                新碟上架
+              </a>
+            </div>
+            <div class="rigth-area">
+              <a href="#" class="more">更多</a>
+            </div>
+          </div>
+
+          <div class="content">
+            <a class="icon-left" href="#"></a>
+            <div class="inner">
+              <div class="roller">
+                <ul class="list">
+                  <li class="item">
+                    <div class="album">
+                      <img src="./images/music_2.jpg" alt="">
+                      <a href="#" class="cover"></a>
+                      <a href="#" class="play"></a>
+                    </div>
+                    <a href="#" class="title">Yours Truly (Tenth Anniversary Edition)</a>
+                    <a href="#" class="name">Ariana Grande</a>
+                  </li>
+                  <li class="item">
+                    <div class="album">
+                      <img src="./images/music_2.jpg" alt="">
+                      <a href="#" class="cover"></a>
+                      <a href="#" class="play"></a>
+                    </div>
+                    <a href="#" class="title">Yours Truly (Tenth Anniversary Edition)</a>
+                    <a href="#" class="name">Ariana Grande</a>
+                  </li><li class="item">
+                    <div class="album">
+                      <img src="./images/music_2.jpg" alt="">
+                      <a href="#" class="cover"></a>
+                      <a href="#" class="play"></a>
+                    </div>
+                    <a href="#" class="title">Yours Truly (Tenth Anniversary Edition)</a>
+                    <a href="#" class="name">Ariana Grande</a>
+                  </li><li class="item">
+                    <div class="album">
+                      <img src="./images/music_2.jpg" alt="">
+                      <a href="#" class="cover"></a>
+                      <a href="#" class="play"></a>
+                    </div>
+                    <a href="#" class="title">Yours Truly (Tenth Anniversary Edition)</a>
+                    <a href="#" class="name">Ariana Grande</a>
+                  </li><li class="item">
+                    <div class="album">
+                      <img src="./images/music_2.jpg" alt="">
+                      <a href="#" class="cover"></a>
+                      <a href="#" class="play"></a>
+                    </div>
+                    <a href="#" class="title">Yours Truly (Tenth Anniversary Edition)</a>
+                    <a href="#" class="name">Ariana Grande</a>
+                  </li>
+                </ul>
+                <ul class="list">2</ul>
+              </div>
+            </div>
+            <a class="icon-right" href="#"></a>
+          </div>
+
+
+        </div>
+        <div class="rank-section">
+          <div class="header_type_02">
+            <div class="left-area">
+              <a href="#" class="title">
+                榜单
+              </a>
+            </div>
+            <div class="rigth-area">
+              <a href="#" class="more">更多</a>
+            </div>
+          </div>
+          <div class="content">
+            <dl class="up-rank">
+              <dt class="header">
+                <div class="album">
+                  <img src="./images/up-rank.jpg" alt="">
+                  <a href="#" class="cover"></a>
+                </div>
+                <div class="info">
+                  <h3>飙升榜</h3>
+                  <div class="op">
+                    <a href="#" class="btn play"></a>
+                    <a href="#" class="btn hover"></a>
+                  </div>
+                </div>
+              </dt>
+            </dl>
+            <dl class="new-rank">
+              <dt class="header">
+                <div class="album">
+                  <img src="./images/up-rank.jpg" alt="">
+                  <a href="#" class="cover"></a>
+                </div>
+                <div class="info">
+                  <h3>飙升榜</h3>
+                  <div class="op">
+                    <a href="#" class="btn play"></a>
+                    <a href="#" class="btn hover"></a>
+                  </div>
+                </div>
+            </dl>
+            <dl class="orgin-rank">
+              <dt class="header">
+                <div class="album">
+                  <img src="./images/up-rank.jpg" alt="">
+                  <a href="#" class="cover"></a>
+                </div>
+                <div class="info">
+                  <h3>飙升榜</h3>
+                  <div class="op">
+                    <a href="#" class="btn play"></a>
+                    <a href="#" class="btn hover"></a>
+                  </div>
+                </div>
+            </dl>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
       <div class="area-rigth">
         <div class="user-login">
           <p>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
           <a href="#">用户登录</a>
         </div>
+        <div class="settle-singer">
+          <div class="header_type_01">
+            <h3 class="title">入驻歌手</h3>
+            <a href="#" class="more">查看更多 &gt;</a>
+          </div>
+          <ul class="list">
+            <li>
+              <a href="#" class="item">
+                <img src="./images/user_01.jpg" alt="">
+                <div class="info">
+                  <div class="name">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹台湾歌手张惠妹台湾歌手张惠妹台湾歌手张惠妹台湾歌手张惠妹台湾歌手台湾歌手张惠妹台湾歌手张惠妹张惠妹台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <img src="./images/user_01.jpg" alt="">
+                <div class="info">
+                  <div class="name">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <img src="./images/user_01.jpg" alt="">
+                <div class="info">
+                  <div class="name">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <img src="./images/user_01.jpg" alt="">
+                <div class="info">
+                  <div class="name">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <img src="./images/user_01.jpg" alt="">
+                <div class="info">
+                  <div class="name">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+       
       </div>
     </div>
   </div>

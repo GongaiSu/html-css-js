@@ -1,4 +1,4 @@
-body,h1,h2,h3,ul,li input,p{
+body,h1,h2,h3,ul,li input,p,dd,dt,dl{
   margin: 0;
   padding: 0;
 }
@@ -23,4 +23,8 @@ input{
 
 img{
   vertical-align: top;
+}
+
+i{
+  font-style: normal;
 }

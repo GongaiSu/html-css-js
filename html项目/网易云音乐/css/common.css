@@ -11,3 +11,60 @@
   width:982px;
   margin: 0 auto;
 }
+
+
+
+/* 按钮样式的抽离和复用 */
+
+
+.btn_sprit{
+  display: inline-block;
+  background: url(../images/button_sprit.png);
+  height: 31px;
+  text-align: center;
+  line-height: 31px;
+}
+
+.btn_sprit_type_01_sup{
+  display: inline-block;
+  background-position: right -100px;
+  padding-right: 5px;
+}
+.btn_sprit_type_01_sub{
+  display: block;
+  background-position: 0 -59px;
+  padding-left: 3px;
+}
+
+
+.btn_sprit_type_play_sup{
+  display: inline-block;
+  background-position: right -428px;
+  padding-right: 5px;
+}
+
+.btn_sprit_type_play_sub{
+  display: inline-block;
+  background-position: 0 -387px;
+  color: #fff;
+  padding: 0 7px 0 8px;
+}
+
+.btn_sprit_type_play_btn_sub{
+  float: left;
+  width: 20px;
+  height: 18px;
+  background-position: 0 -1622px;
+  margin: 6px 2px 2px 0;
+}
+
+
+.iconall_sprit{
+  display: inline-block;
+  background: url(../images/icon_1.png);
+}
+.iconall_sprit_radio{
+  background-position: -31px -658px;
+  width: 35px;
+  height: 15px;
+}

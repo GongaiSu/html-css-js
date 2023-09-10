@@ -1,0 +1,78 @@
+
+/* header */
+
+.header_type_01{
+
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 7px;
+
+}
+
+
+.header_type_01 .title{
+  font-size:12px ;
+  font-weight: 700;
+
+}
+
+.header_type_01 .more{
+  font-size:12px ;
+}
+.header_type_01 .more:hover{
+  text-decoration: underline;
+}
+.header_type_02{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 35px;
+  border-bottom: 2px solid #C10D0c;
+  box-sizing: border-box;
+  background: url(../images/index_sprit.png) no-repeat -225px -156px;
+  padding: 0 20px 5px 34px;
+}
+
+.header_type_02::after{
+  content: "";
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+  width: 12px;
+  height: 12px;
+  background: url(../images/index_sprit.png) no-repeat 0 -240px;
+}
+.header_type_02 .left-area {
+  display: flex;
+  align-items: flex-end;
+}
+
+.header_type_02 .left-area .title{
+  font-size: 20px;
+  color: #333;
+}
+
+.header_type_02 .rigth-area .more:hover{
+  text-decoration: underline;
+}
+
+
+.header_type_02 .left-area  .keyword{
+  display: flex;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  
+}
+.header_type_02 .left-area .keyword .item{
+  margin: 0 2px;
+  color: #666;
+}
+.header_type_02 .left-area .keyword .item:hover{
+  text-decoration: underline;
+}
+.header_type_02 .left-area .keyword .line{
+  margin: 0 10px; 
+  color: #999;
+}

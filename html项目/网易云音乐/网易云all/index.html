@@ -9,357 +9,111 @@
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/header.css">
 
+
+  <link rel="stylesheet" href="./css/page_header.css">
+  <link rel="stylesheet" href="./css/page_banner.css">
   <link rel="stylesheet" href="./css/main-right.css">
-  <style>
-    .main .area{
-      display: flex;
-      justify-content: space-between;
-      min-height: 700px;
-      border: 1px solid #d3d3d3;
-      border-width: 0 1px;
-      background: url(./images/mian-bg.png);
-    }
-    
-
-    .main .area .area-left{
-      width: 729px;
-      padding: 20px 20px 40px;
-    }
-
-
-    .rocommend-section .list{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 20px 2px;
-    }
-    .rocommend-section .list .item{
-      
-      margin-bottom: 20px;
-     
-    }
-
-
-    .rocommend-section .list .item .box{
-      width: 140px;
-      margin: 0 auto;
-    }
-    
-    /* 进行抽离，复用 */
-    .sprite_01{
-      background-image: url(./images/music-sprite-1.png);
-      display: inline-block;
-    }
-    .sprite_02{
-      background-image: url(./images/music-sprite-icon-1.png);
-      display: inline-block;
-    }
-
-    .sprite_02_music{
-      width: 14px;
-      height: 11px;
-      background-position: 0 -24px;
-    }
-    .sprite_02_play{
-      width: 16px;
-	    height: 17px;
-      background-position: 0 0;
-    }
-
-    .rocommend-section .list .item .box .content{
-      position: relative;
-    }
-    .rocommend-section .list .item .box .content img{
-      vertical-align: top;
-    }
-    .rocommend-section .list .item .box .content .img_shadow{
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      /* background-image: url(../images/music-sprite-1.png); */
-      background-position: 0 0;  
-    }
-    .rocommend-section .list .item .box .content .info{
-      position: absolute;
-      height: 27px;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      /* background-image: url(../images/music-sprite-1.png); */
-      background-position: 0 -537px;
-      color: #ccc;
-      line-height: 27px;
-      padding-left: 10px;
-    }
-    .rocommend-section .list .item .box .content .info .music{
-      position: relative;
-      top: 1px;
-      display: inline-block;
-      /* width: 14px;
-      height: 11px;
-      background-image: url(../images/music-sprite-icon-1.png);
-      background-position: 0 -24px; */
-    }
-    .rocommend-section .list .item .box .content .info .count{
-      margin-left: 5px;
-      font-size: 12px;
-    }
-    .rocommend-section .list .item .box .content .info .bofang{
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto 0;
-      right: 10px;
-      /* display: inline-block;
-      width: 16px;
-	    height: 17px;
-      background-image: url(../images/music-sprite-icon-1.png);
-      background-position: 0 0; */
-    }
-    
-
-
-    .rocommend-section .list .item .box a{
-      
-      margin-top: 5px;
-      display: inline-block;
-      text-decoration: none;
-      color: #000;
-      font-size: 14px;
-    }
-    .rocommend-section .list .item .box a .ican-radio{
-      position: relative;
-      top: 2px;
-    }
-    .rocommend-section .list .item .box a:hover{
-      text-decoration: underline;
-      color: #000;
-      font-size: 14px;
-    }
-
-
-    .disc-section .content{
-      position: relative;
-      height: 186px;
-      box-sizing: border-box;
-      border: 1px solid #d3d3d3;
-      margin: 20px 0;
-    }
-
-    .disc-section .content .icon-left{
-      position: absolute;
-      width: 17px;
-      height: 17px;
-      left: 0;
-      top: 71px;
-      background: url(./images/index_sprit.png) no-repeat -260px -75px;
-    }
-
-    .disc-section .content .icon-right{
-      position: absolute;
-      width: 17px;
-      height: 17px;
-      right: 0;
-      top: 71px;
-      background: url(./images/index_sprit.png) no-repeat -300px -75px;
-    }
-
-    .disc-section .content .inner{
-      height: 100%;
-      box-sizing: border-box;
-      border: 1px solid #fff;
-      padding: 0 20px;
-      background: #f5f5f5;
-    }
-
-    .disc-section .content .inner .roller{
-      display: flex;
-      height: 100%;
-      overflow: hidden;
-    }
-    .disc-section  .inner .roller .list{
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 15px;
-      flex-shrink: 0;
-    }
-    .disc-section  .inner .roller .list .item{
-      
-      width: 118px;
-      height: 150px;
-      background: url(./images/index_sprit.png) no-repeat -260px 100px;
-    }
-    .disc-section  .inner  .list .item .album{
-      position: relative;
-    }
-    .disc-section  .inner  .list .item .cover{
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: url(./images/music-sprite-1.png) no-repeat 0 -570px;
-    }
-
-    .disc-section  .inner  .list .item .cover:hover+.play{
-      display: block;
-    }
-    .disc-section  .inner  .list .item .play{
-      display: none;
-      position: absolute;
-      width: 22px;
-      height: 22px;
-      right: 25px;
-      bottom: 5px;
-      background: url(./images/music-sprite-icon-1.png) no-repeat 0 -85px;
-    }
-
-    .disc-section  .inner  .list .item .title{
-      display: block;
-      width: 90%;
-      margin-top: 10px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-
-    .disc-section  .inner  .list .item .name{
-      display: block;
-      margin-top: 5px;
-      color: #999;
-    }
-    .disc-section  .inner  .list .item .title:hover,
-    .disc-section  .inner  .list .item .name:hover{
-      text-decoration: underline;
-    }
-
-    .rank-section .content{
-      display: flex;
-      height: 472px;
-      margin-top: 20px;
-      background: url(./images/index_bill.png);
-    }
-
-    .rank-section .content dl{
-      width: 230px;
-      
-    }
-
-    .rank-section .content  .header{
-      height: 120px;
-      display: flex;
-      box-sizing: border-box;
-      padding: 20px 0 0 20px;
-    }
-    .rank-section .content  .header .album{
-      position: relative;
-      width: 80px;
-      height: 80px;
-    }
-    .rank-section .content  .header .album img{
-      width: 100%;
-      height: 100%;
-    }
-
-    .rank-section .content  .header .cover{
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: url(./images/music-sprite-1.png) no-repeat -145px -57px; 
-    }
-    .rank-section .content  .header .info{
-      margin: 5px 0 0 10px;
-    }
-
-    .rank-section .content  .header .op{
-      margin-top: 10px;
-    }
-    .rank-section .content  .header .op .btn{
-      display: inline-block;
-      width: 22px;
-      height: 22px;
-      background: url(./images/index_sprit.png) no-repeat;
-    }
-    .rank-section .content  .header .op .btn.play{
-      background-position: -267px -205px;
-    }
-    .rank-section .content .header .op .btn.hover {
-      margin-left: 10px;
-      background-position: -300px -205px;
-    }
-
-
- 
-    .rank-section .content .dd-list .li-item {
-      display: flex;
-      line-height: 32px;
-      height: 32px;
-      padding-left: 13px;
-    }
-
-    .rank-section .content .dd-list .li-item:nth-child(-n+3) .no{
-      color: #f00;
-    }
-    .rank-section .content .dd-list .li-item .no{
-      min-width: 35px;
-      height: 32px;
-      font-size: 16px;
-      text-align: center;
-    }
-    .rank-section .content .dd-list .li-item .song{
-      width: 170px;
-      flex-basis: auto;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-    .rank-section .content .dd-list .li-item .song:hover{
-      text-decoration: underline;
-    }
-    .rank-section .content .dd-list .li-item .song:hover +.oper{
-      display: flex;
-    }
-
-    .rank-section .content .dd-list .li-item .oper{
-      display: none;
-      align-items: center;
-      width: 82px;
-    }
-    .rank-section .content .dd-list .li-item .oper .btn{
-      margin-right: 8px;
-      width: 17px;
-      height: 17px;
-      background:url(./images/index_sprit.png) no-repeat;
-    }
-    .rank-section .content .dd-list .li-item .oper .btn.add{
-      background: url(./images/icon_1.png) no-repeat 0 -698px;
-    }
-    .rank-section .content .dd-list .li-item .oper .btn.play{
-      background-position: -267px -268px;
-    }
-    .rank-section .content .dd-list .li-item .oper .btn.hover{
-      background-position: -297px -268px;
-    }
-    .rank-section .content .dd-list .more{
-      height: 32px;
-      line-height:  32px;
-      text-align: right;
-      padding-right: 20px;
-    }
-    .rank-section .content .dd-list .more a:hover{
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/page_main.css">
 </head>
 <body>
+  
 
+  <div class="header">
+    <div class="top">
+      <div class="topbar wapper_01">
+  
+        <div class="bar-left">
+          <h1 class="logo">
+            <a href="#">网易云音乐</a>
+          </h1>
+          <ul class="list">
+            <li class="item"><a  class="active" href="#">发现音乐</a></li>
+            <li class="item"><a href="#">我的音乐</a></li>
+            <li class="item"><a href="#">关注</a></li>
+            <li class="item"><a href="#">商城</a></li>
+            <li class="item"><a href="#">音乐人</a></li>
+            <li class="item"><a href="#">云推歌</a></li>
+            <li class="item"><a href="#">下载客户端</a></li>
+          </ul>
+        </div>
+        <div class="bar-right">
+  
+          <div class="search">
+            <input id="search-input" type="text" >
+            <label for="search-input" title="音乐/视频/电台/用户">音乐/视频/电台/用户</label>
+            
+          </div>
+          <div class="cz">
+            <a  href="#">创作者中心</a>
+          </div>
+          <div class="login">
+            <a href="#">登录</a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="nav">
+      <div class="navbar wapper_01">
+        <ul class="list">
+          <li><a href="#" class="item active"><span>推荐</span></a></li>
+          <li><a href="#" class="item"><span>排行榜</span></a></li>
+          <li><a href="#" class="item"><span>歌单</span></a></li>
+          <li><a href="#" class="item"><span>主播电台</span></a></li>
+          <li><a href="#" class="item"><span>歌手</span></a></li>
+          <li><a href="#" class="item"><span>新碟上架</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
+  <div class="banner">
+    <div class="area wapper_03">
+      <div class="area-left">
+        <ul class="img-list">
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_01.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_01.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_01.jpg" alt="">
+            </a>
+          </li>
+          
+        </ul>
+        <ul class="bost-list">
+          <li><a href="#" class="item active"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+          <li><a href="#" class="item"></a></li>
+        </ul>
+      </div>
+      <div class="area-right">
+
+        <a class="download" href="#">
+          下载客户端
+        </a>
+        <span>PC 安卓 iPhone WP iPad Mac 六大客户端</span>
+      </div>
+      <a class="control left" href="#"></a>
+      <a class="control right" href="#"></a>
+      
+    </div>
+  </div>
 
   <div class="main">
     <div class="area wapper_02">
@@ -753,6 +507,104 @@
                     <a href="#" class="btn hover"></a>
                   </div>
                 </div>
+              </dt>
+              <dd class="dd-list">
+                <ol>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                </ol>
+                <div class="more">
+                  <a href="#">查看全部 &gt;</a>
+                </div>
+              </dd>
             </dl>
             <dl class="orgin-rank">
               <dt class="header">
@@ -767,26 +619,108 @@
                     <a href="#" class="btn hover"></a>
                   </div>
                 </div>
+              </dt>
+              <dd class="dd-list">
+                <ol>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                  <li class="li-item">
+                    <span class="no">1</span>
+                    <a class="song" href="#">相遇在广袤无垠的宇宙 (原创live)</a>
+                    <div class="oper">
+                      <a class="btn play" href="#"></a>
+                      <a class="btn add" href="#"></a>
+                      <a class="btn hover" href="#"></a>
+                    </div>
+                  </li>
+                </ol>
+                <div class="more">
+                  <a href="#">查看全部 &gt;</a>
+                </div>
+              </dd>
             </dl>
 
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </div>
       <div class="area-rigth">
         <div class="user-login">
@@ -850,6 +784,11 @@
       </div>
     </div>
   </div>
-  
+
+
+
+
+
+
 </body>
 </html>

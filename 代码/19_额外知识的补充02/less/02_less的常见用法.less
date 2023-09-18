@@ -1,0 +1,30 @@
+// .box{
+//   width: 200px;
+//   height: 200px;
+//   background-color: red;
+// }
+
+// 定义变量
+@mainColor : #f3c258;
+@mainWidht : 200px;
+@mainHeight : 200px;
+
+.box{
+  width: @mainWidht;
+  height: @mainHeight;
+  background: @mainColor;
+}
+
+
+.list{
+  .item{
+    font-size: 20px;
+
+    &:hover{
+      color:#00f
+    }
+    &:last-child{
+      color:#0f0;
+    }
+  }
+}

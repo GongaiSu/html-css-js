@@ -1,0 +1,27 @@
+// 1、计算
+// .box{
+//   width: 100px+10rm;
+//   height: 100px;
+//   background-color: orange;
+// }
+
+
+// 2、混入
+
+.wapper_ellipsis{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.box1{
+  width: 100px;
+  background-color: orange;
+  .wapper_ellipsis();
+}
+
+.box2{
+  width: 120px;
+  background-color: red;
+  .wapper_ellipsis();
+}

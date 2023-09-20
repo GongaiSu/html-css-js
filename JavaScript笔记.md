@@ -24,3 +24,33 @@
 ## 和浏览器的交互方式
 
 ![image-20230920172713336](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20230920172713336.png)
+
+## 变量的定义
+
+### 命名规范
+
+* 第一个字符必须是一个字母、下划线(_)或一个美元符号($)
+* 其他字符可以是字母、下划线、美元符号或数字
+* 不能使用关键字和保留命名：
+  * https://developer.mozilla.org/zh-CN/docs/web/javascript/reference/lexical_grammar
+
+* 变量命名规范：建议遵守
+  * 多个单词使用驼峰标识
+  * 赋值 = 两边都加一个空格
+
+## 常见的数据类型
+
+### 7种原始类型和1种复杂类型
+
+* Number
+* String
+* Boolean
+* Undefined
+* Null
+* Object(复杂类型)
+* Bigint
+* Symbol
+
+## typeof操作符
+
+* 用来确定任意变量的数据类型

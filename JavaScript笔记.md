@@ -51,6 +51,35 @@
 * Bigint
 * Symbol
 
+### Number
+
+* 代表整数和浮点数
+* 特殊数值
+  * Infinity：代表数学概念中的无穷大
+  * NaN：表示一个计算错误，得到的一个不是数字类型的结果
+* 获取最大值和最小值
+  * 最大值：Number.MAX_VALUE
+  * 最小值：Number.MIN_VALUE
+* 判断是否时NaN
+  *  Number.isNaN
+
+### String
+
+* 可以使用单引号和双引号还有反引号表示
+  * 反引号是ES6中引入
+* 转义字符：斜杠(\\)
+
+### Boolean
+
+* 用于表示真假
+
+### Undefined
+
+* 声明一个变量，但是没有对其进行初始化，默认值就是undefined
+
+
+
 ## typeof操作符
 
 * 用来确定任意变量的数据类型
+

@@ -83,3 +83,76 @@
 
 * 用来确定任意变量的数据类型
 
+## 类型转换
+
+### 转换为String
+
+* 显示转换
+  * String()函数：进行转换
+
+### 转换为Number
+
+* 显示转换
+  * Number()函数：进行转换
+  * ![image-20230923221317644](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923221317644.png)
+
+### 转换为Boolean
+
+* 隐式转换
+
+  * 直观上为空的值（如0、空字符串、null、underfined和NaN）转换为false
+  * 其他值为true
+
+* 显示转换
+
+  * Boolean()函数：进行转换
+
+  ![image-20230923221642245](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923221642245.png)
+
+* 注意：包含0的字符串是true
+
+### 原始类型转换
+
+![image-20230923225833094](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923225833094.png)
+
+![image-20230923232543737](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923232543737.png)
+
+## 运算符
+
+### 算数运算符
+
+![image-20230923222313604](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923222313604.png)
+
+### 比较运算符
+
+![image-20230923222802503](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923222802503.png)
+
+### ==与===的区别
+
+* ==
+  * 在类型不相同的情况下比较时，会将判断符合== 两侧的值转换为数字
+  * 空字符串和false也是如此。转换后她们都为数字0；
+  * null比较特殊：null进行比较的时候，应该是会被当成一个对象和原生类型进行比较
+
+* ===
+  * 在类型不相同的情况下，直接返回false
+
+### 逻辑运算符
+
+![image-20230923233609196](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923233609196.png)
+
+### for循环
+
+![image-20230923234645442](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923234645442.png)
+
+![image-20230923234619613](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923234619613.png)
+
+##  函数
+
+### arguments（JS高级在学习）
+
+* 是一个特别的对象：arguments对象
+  * 默认情况下，arguments对象是所有（非箭头）函数中都可以使用的局部变量
+  * 该对象中存放着所有的调用着传入的参数，从0位置开始，依次存放
+  * arguments变量的类型是一个object类型（array-like），不是一个数组，但是和数组的用法看起来很相似
+  * 如果调用者传入的参数多余函数接受的参数，可以通过arguments去获取所有的参数

@@ -62,6 +62,15 @@
   * 最小值：Number.MIN_VALUE
 * 判断是否时NaN
   *  Number.isNaN
+* toString(base)，将数字转换为字符串，并且按照base进制进行转换
+  * base的范围可以从2到36，默认情况下是10
+  * 注意：如果是直接对一个数字操作，需要使用..运算符
+
+* toFixed(digits)，格式化一个数字，保留digits位的小数
+  * digits的范围是0到20（包含）之间
+
+* parseInt：将字符串解析成整数
+* parstFloat:将字符串解析成浮点数
 
 ### String
 
@@ -89,6 +98,31 @@
 
 * 显示转换
   * String()函数：进行转换
+
+* 获取子字符串
+
+  * | 方法                 | 选择方式                          | 负值参数        |
+    | -------------------- | --------------------------------- | --------------- |
+    | slice(start,end)     | 从start到end（不含end）           | 允许            |
+    | substring(start,end) | 从start到end（不含end）           | 负值表示0       |
+    | substr(start,length) | 从start开始获取长为length的字符串 | 允许start为负值 |
+
+
+* 拼接字符串
+
+  * concat()
+
+* 删除首尾空格
+
+  * trim()
+
+* 字符串分割
+
+  * splic
+
+    * separator：以什么字符串进行分割，也可以是一个正则表达式
+    * limit：限制返回的片段的数量
+
 
 ### 转换为Number
 
@@ -206,7 +240,7 @@
 * 在对象中的函数中使用对象中的变量
 * 方便再一个方法中，拿去当前对象的一些属性
 
-## JavaScript中的类
+## JavaScript中的类和对象
 
 ### 一个函数被使用new操作符调用了，他会执行如下操作
 
@@ -221,3 +255,66 @@
 * 作用一：查找变量时，最终会找到window头上
 * 作用二：将一些浏览器全局提供给我们的变量/函数/对象，放在window对象上面，可以直接调用
 * 作用三：使用var定义的变量会默认添加到window上面
+
+### 内置对象
+
+#### Math对象
+
+* 拥有一些数学常见的属性和数学函数方法
+* 常见的方法：
+  * Math.floor()：向下舍入取整
+  * Math.ceil()：向上舍入取整
+  * Math.round()：四舍五入取整
+  * Math.random()：生成0~1的随机数（包含0，不包含1）
+  * Math.pow(x,y)：返回x的y次幂
+
+### 数组Array对象
+
+#### 添加、删除方法
+
+* 在数组的尾部添加或删除元素
+  * push：在未端添加元素
+  * pop：从末端去除一个元素
+* 在数组的首端添加或删除元素
+  * unshift：在首端添加元素，整个其他数组元素向后移动
+  * shift：去除队列中首端的一个元素，整个数组元素向前移动
+* push/pop方法运行的比较快，而shift/unshift比较慢
+
+#### splice方法
+
+* 可以进行数组的添加，删除和替换元素
+
+* 结构
+
+  * ![image-20231007162736200](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231007162736200.png)
+
+  * 从start位置开始，处理数组中的元素
+  * deleteCount：要删除元素的个数，如果是0或者负数表示不删除
+  * item1，item2，...：在添加元素时，需要添加的元素
+  * 这个方法修改的是原数组
+
+####  concat方法
+
+* 将多个数组进行拼接
+
+#### spice方法
+
+* 用于对数组进行截取（类似于字符串的slice方法）
+
+#### join方法
+
+*  将一个数组的所有元素连接成一个字符串并返回这个字符串
+
+### Date对象
+
+#### 创建方式
+
+* 使用Date构造函数
+*  传入参数：时间字符串
+* 传入具体的年月日时分秒毫秒
+* 传入一个Unix时间戳
+* ![image-20231007205427301](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231007205427301.png)
+
+#### dateString的时间的表示方式
+
+![image-20231007205617356](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231007205617356.png)

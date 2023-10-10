@@ -376,3 +376,40 @@
 #### 获取元素的方法
 
 ![image-20231010170412783](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231010170412783.png)
+
+#### 节点的属性
+
+##### nodeType
+
+* 获取节点属性的方法，返回一个数值类型 
+
+* 常见值
+* ![image-20231010224034582](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231010224034582.png)
+
+##### nodeName和tagName
+
+* nodeName：获取node节点的名字
+
+* tagName：获取元素的标签名字
+
+* 区别
+  * tagName属性适用于Element节点
+  * nodeName是为任意Node定义的：
+    * 对于元素，它的意义与tagName相同，所以使用哪一个都是可以的
+    * 对于其他节点类型（text，comment等），它拥有一个对应节点类型的字符串
+
+##### innerHTML和textContent
+
+* innerHTML
+  * 将元素中的HTML获取为字符串形式；
+  * 设置元素中的内容
+* outerHTML
+  * 包含了元素的完整HTML
+  * innerHTML加上元素本身
+* textContent
+  * 仅仅获取元素中的文本内容
+* innerHTML和textContent写入时的区别
+  * 使用innerHTML，我们将其“作为HTML”插入，带有所有HTML标签
+  * 使用textContent，我们将其“作为文本”插入，所有的符号均按字面意义处理
+
+##### 

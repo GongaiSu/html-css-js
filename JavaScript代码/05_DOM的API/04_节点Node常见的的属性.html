@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 我是注释 -->
+  我是文本
+  <div class="box">我是box
+    <h2>我是h2</h2>
+  </div>
+  
+
+
+  <script>
+
+    var nodebody = document.body.childNodes
+    var commentNode = nodebody[1]
+    var textNode = nodebody[2]
+    var divNode = nodebody[3]
+
+
+    console.log(commentNode,textNode,divNode);
+    // nodeTyoe
+    console.log(commentNode.nodeType,textNode.nodeType,divNode.nodeType);
+    //nodeName
+    
+    console.log(commentNode.nodeName,textNode.nodeName,divNode.nodeName);
+    // tagName
+    console.log(commentNode.tagName,textNode.tagName,divNode.tagName);
+
+    // data/innerHTML/textContent
+    console.log(commentNode.data,textNode.data,divNode.data);
+    console.log(commentNode.innerHTML,textNode.innerHTML,divNode.innerHTML);
+    console.log(commentNode.textContent,textNode.textContent,divNode.textContent);
+
+  </script>
+</body>
+</html>

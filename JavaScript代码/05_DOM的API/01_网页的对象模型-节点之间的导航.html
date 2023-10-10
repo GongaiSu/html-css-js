@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 我是注释 -->
+  我是普通文本
+
+
+  <div class="div">我是一个div</div>
+  <ul>
+    <li>我是li1</li>
+    <li>我是li2</li>
+    <li>我是li3</li>
+    <li>我是li4</li>
+    <li>我是li5</li>
+  </ul>
+
+
+
+  <script>
+
+    // var html =  document.documentElement;
+    // var body = document.body;
+    // var head = document.head;
+    // var doc = document.doctype
+    // console.log(doc,html,head,body);
+
+    // 获取节点的导航
+    var body = document.body;
+    // 获取所有的子节点
+    console.log(body.childNodes);
+    // 获取第一个节点
+   var b =  body.firstChild;
+   console.log(b);
+   console.log(b.nextSibling);
+  </script>
+</body>
+</html>

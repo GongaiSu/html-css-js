@@ -97,8 +97,9 @@
 ### 转换为String
 
 * 显示转换
-  * String()函数：进行转换
-
+  
+* String()函数：进行转换
+  
 * 获取子字符串
 
   * | 方法                 | 选择方式                          | 负值参数        |
@@ -318,3 +319,60 @@
 #### dateString的时间的表示方式
 
 ![image-20231007205617356](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231007205617356.png)
+
+## DOM
+
+* 相当于是JavaScript和HTML、CSS之间的桥梁
+  * 通过浏览器提供给我们的DOM API，我们可以对元素以及其中的内容做任何事情；
+
+### 类型之间的继承关系
+
+![image-20231010150435518](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231010150435518.png)
+
+### document对象
+
+* 对于最顶层html、head、body元素，我们可以之间在document对象中获取
+  * html元素：<html>:document.documentElement
+  * body元素：<body>:document.body
+  * head元素：<head>:document.head
+  * 文档声明：<!DOCtype html>:document.doctype
+
+#### 导航
+
+* 获取到一个节点后，更具这个(节点/元素)获取其他(节点/元素)就叫做导航
+
+#### 节点之间的导航
+
+* 获取一个节点后，可以根据这个节点去获取其他节点，称之为节点之间的导航
+
+##### 节点之间存在的关系
+
+* 父节点：parentNode
+* 前兄弟节点：previousSibling
+* 后兄弟节点：nextSibling
+
+* 字节点：childNodes
+* 第一个子节点：firstChild
+* 第二个子节点：lastChild
+
+![image-20231010154443015](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231010154443015.png)
+
+#### 元素之间的导航
+
+* 获取一个元素后，可以根据这个元素去获取其他元素，称之为元素之间的导航
+
+##### 节点之间存在的关系
+
+* 父节点：parentElement
+* 前兄弟节点：previousElementSibling
+* 后兄弟节点：nextElementSibling
+
+* 字节点：children
+* 第一个子节点：firstElementChild
+* 第二个子节点：lastElementChild
+
+![image-20231010155451198](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231010155451198.png)
+
+#### 获取元素的方法
+
+![image-20231010170412783](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231010170412783.png)

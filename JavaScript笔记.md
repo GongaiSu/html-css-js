@@ -481,4 +481,36 @@
 
 * 可以使用cloneNode方法进行克隆
   * 可以传入一个Boolean类型的值，来决定是否深度克隆
-    * 深度克隆：将其本身及其后代一起克隆
+  * 深度克隆：将其本身及其后代一起克隆
+
+##### 元素的大小、滚动 
+
+![image-20231011222257879](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231011222257879.png)
+
+* clientWidth：contentWhith+padding(不包含滚动条)
+* clientHeight：contentHeight+padding(不包含滚动条)
+
+* clientTop：border-top的宽度
+* clientLeft：border-left的宽度
+* offsetWidth：元素完整的宽度
+* offsetHeigth：元素完整的高度
+* offsetTop：距离父元素的x
+* offsetLeft：距离父元素的y
+* scrollHeight：可滚动的高度
+* scrollTop：滚动部分的高度 
+
+##### window的大小、滚动
+
+* innerWidth、innerHeight：获取window窗口的宽度和高度（包括滚动条）
+* outerWidth、outerHeight：获取window窗口的整个宽度和高度（包括调试工具、工具栏）
+* documentElement.clientHeigth、documentElement.clientWidth：获取html的宽度和高度（不包含滚动条）
+
+###### window的滚动位置
+
+* scrollX：X轴滚动的位置（别名pageXOffset）
+* scrollY：Y轴滚动的位置（别名pageYOffset)
+
+###### 滚动方法
+
+* scrollBy(x,y):将页面滚动至相当于当前位置的（x,y)位置；
+* scrollTo(pageX,pageY)将页面滚动至绝对坐标；

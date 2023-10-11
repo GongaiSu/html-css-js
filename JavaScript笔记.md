@@ -412,4 +412,73 @@
   * 使用innerHTML，我们将其“作为HTML”插入，带有所有HTML标签
   * 使用textContent，我们将其“作为文本”插入，所有的符号均按字面意义处理
 
-##### 
+#### 元素Element
+
+##### Attribute
+
+* hasAttribute(name)：检查特性是否存在
+* getAttribute(name)：获取这个特征值
+* setAttribute(name,value)：设置这个特征值
+* removeAttribute(name)：移除这个特征值
+* attribute：attr对象的集合，具有name、value属性；
+* attribute具备的特性
+  * 名字是大小写不敏感
+  * 值总是字符串类型
+
+##### property
+
+* 对于标准的attribute，会在DOM对象上创建与其对应的property属性
+* 在大多数情况下，它们是相互作用的
+  * 改变property，通过attribute获取的值，会随着改变；
+  * 通过attribute操作修改，property的值也会随着改变
+    * 但是input的value修改只能通过attribute的方法
+
+##### class
+
+* className：动态设置class，会将原有的class属性覆盖
+
+* classList
+
+  * classList.add(class)：添加一个类
+
+  * classList.remove(class)：移除一个类
+
+  * classList.toggle(class)：如果类不存在就添加，存在就移除
+
+    classList.contains(class)：检查给定类，返回true/false
+
+##### style
+
+* 需要单独修改一个CSS属性，可以通过style来操作
+  * 对于多词属性，使用驼峰式
+* 将值设置为空字符串，会使用CSS默认样式
+* 多个样式的写法，使用cssText属性
+  * 会覆盖style原有值
+* 读取样式
+  * 对于内敛样式，可以通过style.*方式读取
+  * 对于style、css文件中的样式需要通过getComputedStyle的全局函数来进行读取
+  * ![image-20231011142522723](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231011142522723.png)
+
+##### 创建元素
+
+* document.createElement(tag)：创建一个tag类型的元素
+
+##### 插入元素
+
+* node.append(...nodes or strings)：在node末尾添加节点或者字符串
+* node.perpend(...nodes or strings)：在node开头添加节点或者字符串
+* node.before(...nodes or strings)：在node前面添加节点或者字符串
+* node.after(...nodes or strings)：在node后面添加节点或者字符串
+* node.replaceWith(...nodes or strings)：将node替换为给定的节点或者字符串
+
+![image-20231011160322189](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231011160322189.png)
+
+##### 移除元素
+
+* 调用元素本身的remove方法，它会将它的后代元素一起移除
+
+##### 克隆元素
+
+* 可以使用cloneNode方法进行克隆
+  * 可以传入一个Boolean类型的值，来决定是否深度克隆
+    * 深度克隆：将其本身及其后代一起克隆

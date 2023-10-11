@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="box">
+    <span>我是一个span</span>
+    <a href="#">我是一个a</a>
+  </div>
+
+
+  <script>
+    var boxElm = document.querySelector(".box")
+    // 创建一个H2元素
+    var h2Elm = document.createElement("h2")
+    h2Elm.textContent = "我是一个插入的H2"
+    h2Elm.style.color = "red"
+    h2Elm.className = "title"
+    h2Elm.classList.add("active")
+
+    boxElm.append(h2Elm)
+    var spanElm = boxElm.querySelector("span")
+    spanElm.after(h2Elm)
+  </script>
+</body>
+</html>

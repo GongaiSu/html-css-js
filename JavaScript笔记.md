@@ -514,3 +514,67 @@
 
 * scrollBy(x,y):将页面滚动至相当于当前位置的（x,y)位置；
 * scrollTo(pageX,pageY)将页面滚动至绝对坐标；
+
+### JavaScript的事件处理
+
+#### 事件处理的三种方案
+
+* 在script中直接监听
+* DOM属性，通过元素的on来进行监听事件
+* 通过EventTarget中的addEventListener来监听
+
+#### 常见的事件
+
+![image-20231016105447375](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231016105447375.png)
+
+#### 事件冒泡和事件捕获
+
+* 默认情况下事件时从最内层的span向外依次传递的顺序，这个顺序称之为事件冒泡（Event Bubble）
+
+* 另一种监听事件流的方法是从外层到内层（body->span），这种称为事件捕获（Event Captrue）
+
+* 如何改为事件捕获呢？
+
+  * 在addEventListener方法中第3个属性填写true
+
+  ![image-20231016111347560](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231016111347560.png)
+
+![image-20231016111444371](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231016111444371.png)
+
+#### 事件对象
+
+* event：浏览器会自动回调，在方法中自动填写，可以直接使用
+
+  ```javas
+  function(event){
+  console.log(event)
+  }
+  ```
+
+##### 常见的属性
+
+* type：事件的类型
+* target：当前事件发生的元素
+* currentTarget：当前处理事件的元素
+* eventPhase：事件所处的阶段
+* offsetX、offsetY：事件发生在元素内的位置
+* clinetX、clientY：事件发生在客户端内的位置
+* pageX、pageY：事件发生在客户端相对于document的位置
+* screenX、screenY：事件发生相对于屏幕的位置
+
+##### 常见的方法
+
+* preventDefault：取数事件的默认行为；
+* stopPropagation：阻止事件的进一步传递（冒泡或者捕获都可以阻止）
+
+#### EventTarget类
+
+##### 常见的方法
+
+* addEventListener：注册某个事件类型以及事件处理函数
+
+* removeEventListener：移除某哥事件类型以及事件函数
+* dispatchEvent：派发某个事件类型到EventTarget上 
+
+#### 事件委托
+

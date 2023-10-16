@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+    .span{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  
+  <a href="http://www.baidu.com" class="baidu">百度一下</a>
+
+
+  <div class="box">
+    <div class="span">
+      <button class="btn">按钮</button>
+    </div>
+  </div>
+
+
+
+  <script>
+   var aElt = document.querySelector(".baidu")
+   aElt.onclick = function(event){
+    console.log("阻止默认行为");
+    event.preventDefault()
+   }
+   var boxElt = document.querySelector(".box")
+   var spanElt = document.querySelector(".span")
+   var btnElt = document.querySelector(".btn")
+
+
+   boxElt.addEventListener("click",function(event){
+    console.log("111");
+    // 阻止事件的传递
+    event.stopPropagation()
+   },true)
+   spanElt.addEventListener("click",function(){
+    console.log("222");
+   },true)
+   btnElt.addEventListener("click",function(){
+    console.log("333");
+   },true)
+   boxElt.addEventListener("click",function(){
+    console.log("111");
+   })
+   spanElt.addEventListener("click",function(){
+    console.log("222");
+   })
+   btnElt.addEventListener("click",function(){
+    console.log("333");
+   })
+
+
+
+
+
+
+  </script>
+
+
+
+</body>
+</html>

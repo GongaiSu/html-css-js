@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+    .box1{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  
+
+
+  <div class="box">
+    <div class="box1"></div>
+  </div>
+
+
+  <script>
+    var boxElt = document.querySelector(".box") 
+
+
+    boxElt.onmouseenter = function(){
+      console.log("onmouseenter");
+    }
+    boxElt.onmouseleave = function(){
+      console.log("onmouseleave");
+    }
+    boxElt.onmouseover = function(){
+      console.log("onmouseover");
+    }
+    boxElt.onmouseout = function(){
+      console.log("onmouseout");
+    }
+  </script>
+</body>
+</html>

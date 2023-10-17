@@ -578,3 +578,37 @@
 
 #### 事件委托
 
+* 将事件委托给父级或其他代理
+
+#### 鼠标事件
+
+##### 常见的鼠标事件
+
+| 属性        | 描述                                         |
+| ----------- | -------------------------------------------- |
+| click       | 当用户点击某个对象时调用的事件句柄           |
+| contextmenu | 当用户点击鼠标右键打开上下文菜单时触发       |
+| dblclick    | 当用户双击某个对象时调用的事件句柄           |
+| mousedown   | 鼠标按钮被按下                               |
+| mouseup     | 鼠标按钮被松开                               |
+| mouseover   | 鼠标移到某元素之上。（支持冒泡）             |
+| mouseout    | 鼠标从某元素移开。（支持冒泡）               |
+| mouseenter  | 当鼠标指针移动到元素上时触发。（不支持冒泡） |
+| mouseleave  | 当鼠标指针移出元素时触发。（不支持冒泡）     |
+| mousemove   | 鼠标被移动                                   |
+
+##### mouseover和mouseenter
+
+* mouseenter和mouseleave
+  * 不支持冒泡
+  * 进入子元素依然属于该元素，没人任何反应
+  * 不可以用在事件委托上面
+* mouseover和mouseout
+  * 支持冒泡
+  * 进入元素的子元素时
+    * 先调用父元素的mouseout
+    * 在调用子元素的mouseover
+    * 因为支持冒泡，所以会将mouseover传递到父元素中
+  * 可以用在事件委托上面
+
+![image-20231017163656673](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231017163656673.png)

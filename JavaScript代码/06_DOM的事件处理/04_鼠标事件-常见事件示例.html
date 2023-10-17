@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="box"></div>
+
+
+  <script>
+    var boxElt = document.querySelector(".box") 
+
+    boxElt.onmousedown = function(){
+      console.log("鼠标被按下去了");
+    }
+
+
+    boxElt.onmousemove = function(){
+     console.log("鼠标被移动了"); 
+    }
+
+    boxElt.onmouseup = function(){
+      console.log("鼠标被抬起去了");
+    }
+
+
+  </script>
+
+
+</body>
+</html>

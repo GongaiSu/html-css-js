@@ -651,3 +651,87 @@
 #### 文档加载事件
 
 * DOMContentLoaded:浏览器已经完全加载HTML，并构建了DOM树，但是像<img>和样式表之类的外部资源可能尚未加载完成。
+
+#### window定时器方法
+
+##### 实现方法
+
+* setTimeout：允许我们将函数推出一段时间间隔之后再执
+* setInterval：允许我们重复允许一个函数，从一段时间间隔之后开始运行，之后以该时间间隔连续重复运行该函数
+
+##### 取消方法
+
+* clearTimeout:取消setTineout的定时器
+  * setTimeout再调用时会返回一个“定时器表示符”我们可以根据这个标识符执行取消
+* clearInterval:取消setInterval的定时器
+  * setInterval再调用时会返回一个“定时器表示符”我们可以根据这个标识符执行取消
+
+## BOM
+
+浏览器对象模型
+
+### window对象
+
+![image-20231024150531481](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231024150531481.png)
+
+### location对象
+
+![image-20231024151655232](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231024151655232.png)
+
+#### 常用的方法
+
+* assign：赋值一个新的URL，并跳转到该URL中；
+* replace：打开一个新的URL，并且跳转到该URL中（不同的时不会再浏览器记录中留下之前的记录）
+* reload：重新加载页面，可以传入一个Boolean类型
+
+#### URLSearchParams
+
+* 定义了一些实用的方法来处理url的查询字符串
+  * ·可以将一个字符串转化为URLSearchParams类型
+  * 也可以将URLSearchParams类型转换为字符串；
+
+##### 常用方法
+
+* get：获取搜索参数的值
+* set：设置一个搜索参数和值
+* append：追加一个搜索参数和值
+* has：判断是否有某个搜索参数
+
+中文会使用encodeURIComponent和decodeURIComponent进行编码和解码
+
+### history对象
+
+* 允许我们访问浏览器曾经的会话历史记录
+* 两个属性
+  * length：会话中的记录条数
+  * state：当前保留的状态值
+* 五个方法
+  * bac():返回上一页，等价于history.go(-1);
+  * forward():前进下一页，等价于history.go(1);
+  * go():加载历史中的某一页
+  * pushState():打开一个指定的地址
+  * replaceState()：打开一个新的地址，并使用replace；
+
+### navigtor对象
+
+不常使用
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator
+
+### screen对象
+
+不常使用
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/Screen
+
+### JSON
+
+* 可以使用全局对象JSON进行序列化和反序列化
+  * stringify方法：将JavaScript类型转换成对应的JSON字符串
+    * 参数二replacer：可以指定一个函数，选择性的替换值(非必填)
+    * 参数三space：对字符串进行格式化(非必填)
+    * 如果对象中实现了toJSON方法，在解析式会直接返回对象中toJSON返回的值
+  * parse方法：解析JSON字符串，转回对应的JavaScript类型 
+    * 参数二reviver：返回之前对所等到的对象执行操作
+
+# 

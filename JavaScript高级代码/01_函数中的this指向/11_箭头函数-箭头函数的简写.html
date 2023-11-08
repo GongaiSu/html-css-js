@@ -9,18 +9,13 @@
 <body>
   
 
-
   <script>
 
-    var bar = function(){
-      console.log("非箭头函数");
-    }
-    bar()
+    var tmps = ["a","b","c"]
 
-    var foo = ()=>{
-      console.log("箭头函数");
-    }
-    foo()
+    tmps.forEach(tmp=>{
+      console.log(tmp);
+    })
   </script>
 </body>
 </html>

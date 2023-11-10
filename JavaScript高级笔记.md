@@ -95,3 +95,29 @@
 
 * 箭头函数不使用this的四种标准规则（也就是不绑定this），而是根据外层作用域来决定this。
 * ![image-20231108161750814](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231108161750814.png)
+
+# 深入浏览器的渲染原理
+
+## script元素和页面解析的关系
+
+![image-20231110153817043](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231110153817043.png)
+
+一篇非常好的文章：https://web.dev/articles/howbrowserswork?hl=zh-cn
+
+### defer属性
+
+* 告诉浏览器不要等待脚本下载，而继续解析HTML，构建DOM Tree、
+  * 脚本会有浏览器来进行下载，但是不会阻塞DOMTree的构建过程
+  * 如果脚本提前下载还好了，他会等待DOM Tree构建完成，在DOMContentLoaded时间之前执行defer中的代码
+* DOMContentLoaded总会等待defer中的代码限制性完成
+* 多个带defer的脚本时可以保证正确的脚本执行的
+* 从某些角度来说，defer可以提高页面的性能，并且推荐放到head元素中
+* 注意：defer仅仅用于外部脚本，对于script默认内容会被忽略
+
+### async属性
+
+* 与defer有些类似，他也能够让脚本不阻塞页面
+* 是让一个脚本完全独立
+  * 浏览器不会因async脚本而阻塞（与defer类型）
+  * async脚本不能保证顺序，它时独立下载、独立运行，不会等待其他脚本执行完毕；
+  * async不能保证在DOMContentLoaded之前或者之后执行

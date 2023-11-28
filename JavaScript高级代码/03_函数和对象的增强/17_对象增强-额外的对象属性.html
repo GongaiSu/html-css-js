@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+    var obj = {
+      age:18,
+      name:"zs"
+    }
+
+
+    // 获取属性描述符
+    console.log(Object.getOwnPropertyDescriptor(obj,"age")); 
+    console.log(Object.getOwnPropertyDescriptors(obj)); 
+
+    //禁止扩展新属性
+    Object.preventExtensions(obj)
+    obj.address = "sd"
+    console.log(obj);
+
+
+    // 密封对象
+    Object.seal(obj)
+    console.log(Object.getOwnPropertyDescriptors(obj)); 
+
+
+    // 冻结对象
+    Object.freeze(obj)
+    Object.defineProperty(obj,"name",{
+      enumerable:false
+    })
+    console.log(Object.getOwnPropertyDescriptors(obj)); 
+
+  </script>
+</body>
+</html>

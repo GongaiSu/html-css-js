@@ -208,3 +208,103 @@
   * 可读性差
   * 容易被修改，又被攻击的风险
   * 不能被JavaScript引擎优化
+
+## 严格模式
+
+### 支持选择粒度
+
+* 可以在js文件中开启严格模式
+* 也可以对某个函数开启严格模式
+
+### 使用方法
+
+* 在开头添加“use strict”来开启严格模式
+
+### 使用限制
+
+![image-20231128102123739](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231128102123739.png)
+
+# 对象增强
+
+## 对属性操作的控制
+
+* 使用属性描述符对一个属性进行比较精准的操作控制
+  * 使用Object.defineProperty来对属性进行添加或者修改
+
+## 属性描述符分类
+
+* 数据属性描述符
+* 存取属性描述符
+
+![image-20231128102948057](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231128102948057.png)
+
+### 数据属性描述符
+
+* [[Configurable]]：表示属性是否可以通过delete删除属性，是否可以修改它的特性，或者是否可以将它修改为存取属性描述符；
+  * 当我们直接在一个对象定义某个属性时，这个属性的[[Configurable]]为true
+  * 当我们通过属性描述符定义一个属性时，这个属性的[[Configurable]]为false
+* [[Enumerable]]：表示属性是否可以通过for-in或者Object.keys()返回给属性
+  * 当我们直接在一个对象定义某个属性时，这个属性的[[Enumerable]]为true
+  * 当我们通过属性描述符定义一个属性时，这个属性的[[Enumerable]]为false
+* [[Writable]]：表示是否可以修改属性的值
+  * 当我们直接在一个对象定义某个属性时，这个属性的[[Writable]]为true
+  * 当我们通过属性描述符定义一个属性时，这个属性的[[Writable]]为false
+* [[value]]：属性的value值，读取属性时会返回该值，修改属性时，会将其进行修改
+  * 默认情况下这个值时undefined
+
+### 存取属性描述符
+
+* [[Configurable]]：表示属性是否可以通过delete删除属性，是否可以修改它的特性，或者是否可以将它修改为存取属性描述符；
+  * 当我们直接在一个对象定义某个属性时，这个属性的[[Configurable]]为true
+  * 当我们通过属性描述符定义一个属性时，这个属性的[[Configurable]]为false
+* [[Enumerable]]：表示属性是否可以通过for-in或者Object.keys()返回给属性
+  * 当我们直接在一个对象定义某个属性时，这个属性的[[Enumerable]]为true
+  * 当我们通过属性描述符定义一个属性时，这个属性的[[Enumerable]]为false
+* [[get]]：获取属性时会被执行的函数。默认为undefined
+* [[set]]：设置属性时会被执行的函数。默认为undefined
+
+### 多个属性描述符
+
+* Object.defineProperties方法直接在一个对象上定义多个新的属性或者修改现有属性
+
+## 额外方法补充
+
+* 获取对象的属性描述符
+  * getOwnPropertyDescriptor
+  * getOwnPropertyDescriptors
+* 禁止对象扩展新属性：preventExtensions
+  * 给一个对象添加新的属性会失败（严格模式下会报错）
+* 密封对象，不允许配置和删除属性：seal
+  * 实际上调用preventExtensions
+  * 并且将现有属性的configurable:false
+* 冻结对象，不允许修改现有属性：freere
+  * 实际上是调用seal
+  * 并且将现有属性的writable:false
+
+# 原型和原型链
+
+## 普通对象的原型
+
+* JavaScript当中没有对象都有一个特殊的内置属性[[prototype]]，这个特殊的对象可以指向另一个对象
+* 作用
+  * 当通过引用对象的属性key来获取一个value是，她会触发[[Get]]的操作
+  * 这个操作会首先检查改对象是否又对应的属性，如果有的话就使用它
+  * 如果对象中没有该属性，那么会访问对象[[prototype]]内置属性指向的对象上的属性；
+* 获取方法
+  * 方法一：通过对象的`__proto__`属性可以获取到（浏览器兼容性问题）
+  * 方法二：通过Object.getPrototypeOf方法可以获取到
+
+## 函数的原型
+
+* 所有的函数都要一个prototype的属性：这是一个显式原型
+* 函数原型作用
+  * 在new操作创建对象时，将这个显式原型赋值给创建出来对象的隐式原型
+
+### constructor属性
+
+* 原型对象上是有一个属性的：constructor
+  * 默认情况下原型上都会添加一个属性叫做constructor，这个constructor指向当前的函数对象；
+
+### 内存表现图
+
+![image-20231128173758267](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231128173758267.png)

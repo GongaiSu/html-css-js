@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script src="./js/inherit_utils.js"></script>
+  <script>
+
+    function Person(name,age,address,heigth){
+      this.name = name
+      this.age = age
+      this.address=address
+      this.heigth =heigth
+    }
+
+    Person.prototype.running = function(){
+      console.log(this.name,"running");
+    }
+    Person.prototype.eating = function(){
+      console.log(this.name,"eating");
+    }
+    function Student(name,age,address,heigth,sid,score){
+      Person.call(this,name,age,address,heigth)
+      this.sid=sid
+      this.score=score
+    }
+    inherit(Student,Person)
+
+    Student.prototype.studenting=function(){
+      console.log(this.name,"在学习");
+    }
+
+    function Teacher(name,age,address,heigth,tid){
+      Person.call(this,name,age,address,heigth)
+      this.tid=tid
+    }
+    inherit(Teacher,Person)
+
+    Teacher.prototype.working=function(){
+      console.log(this.name,"工作");
+    }
+
+    var stu = new Student("zs",18,"北京",1.88,"001",98)
+    var tud = new Teacher("ls",42,"北京",1.87,"101")
+
+    console.log(stu);
+    console.log(tud);
+    stu.eating()
+    stu.studenting()
+
+  </script>
+</body>
+</html>

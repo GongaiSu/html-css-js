@@ -1,4 +1,4 @@
-# this的指向
+#  nthis的指向
 
 ## 启示
 
@@ -296,7 +296,7 @@
 
 ## 函数的原型
 
-* 所有的函数都要一个prototype的属性：这是一个显式原型
+* 所有的函数(非箭头函数) 都要一个prototype的属性：这是一个显式原型
 * 函数原型作用
   * 在new操作创建对象时，将这个显式原型赋值给创建出来对象的隐式原型
 
@@ -367,3 +367,19 @@
 #### isPrototypeOf
 
 * 用于检查某个对象，是否出现在某个实例对象的原型链上
+
+###  原型继承关系
+
+![image-20231129223150269](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231129223150269.png)
+
+![image-20231129225042175](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231129225042175.png)
+
+# ES6
+
+## 认识class定义类
+
+  
+
+## 类的构造函数
+
+![image-20231129231222909](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20231129231222909.png)

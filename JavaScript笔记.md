@@ -176,6 +176,8 @@
 
 ![image-20230923233609196](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923233609196.png)
 
+* 逻辑与（`&&`）运算符从左到右对操作数求值，遇到第一个假值操作数时立即返回；如果所有的操作数都是真值，则返回最后一个操作数的值
+
 ### for循环
 
 ![image-20230923234645442](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20230923234645442.png)

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+    function MixinRunner(BaneClass){
+      return class extends BaneClass{
+        running(){
+          console.log("running");
+        }
+      }
+    }
+    function MixinEat(BaneClass){
+      return class extends BaneClass{
+        eating(){
+          console.log("eating");
+        }
+      }
+    }
+
+
+    class Person{
+      sleep(){
+        console.log("sleep...");
+      }
+    }
+
+    class Student extends MixinRunner(MixinEat(Person)){
+
+    }
+
+    var stu =  new Student()
+    console.log(stu);
+  </script>
+</body>
+</html>

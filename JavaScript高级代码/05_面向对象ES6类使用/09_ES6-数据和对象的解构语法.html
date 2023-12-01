@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+    var names = ["abc","cba",undefined,"nba","mba"]
+    var obj = {
+      name:"zs",
+      height:1.88,
+      age:12
+    }
+
+
+
+    // 1.1数组的解构
+    // var [name1,name2,name3] = names
+    // console.log(name1,name2,name3);
+
+    // 1.2数组的解构顺序，数组有严格的解构顺序，如果不需要中间的某个值，需要用都逗号隔开
+    // var [name1,,name3] = names
+    // console.log(name1,name3);
+
+    // 1.3解构出数组：当解构出前几个数据后，其余的数据放到一个数组中后
+    // var [name1,name2,...newNames] = names
+    // console.log(name1,name3,newNames);
+     // 1.3解构的默认值：当解构过程中某个数据没有值(即undefined)可以给该数据添加默认值
+     var [name1,name2,name3="defula"] = names
+    console.log(name1,name2,name3);
+
+    // 2对象的解构
+    // 2.1基本使用
+    // var {name,height,age}=obj
+    // console.log(name,age,height);
+
+    // 2.2解构的顺序：没有顺序，按照key值解构
+    // var {name,age,height}=obj
+    // console.log(name,age,height);
+    // 2.3重命名：解构出来的属性可以进行重命名，重命名之后需要使用新的名称
+    // var {name:Wname,age,height}=obj
+    // console.log(name,age,height);
+    // 2.4默认值：当解构过程中某个属性没有值(即undefined)可以给该属性添加默认值
+    // var {name:Wname,age,height,address = "zg"}=obj
+    // console.log(name,age,height,address);
+    // 2.5对象剩余属性：当解构出前几个属性后，其余的属性放到一个新对象中
+    var {name,...newObj}=obj
+    console.log(name,newObj);
+  </script>
+</body>
+</html>

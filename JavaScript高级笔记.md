@@ -426,6 +426,66 @@
 
 * 可以继承js自带的类，如Array等
 
-## 类的混入mixin
+### 类的混入mixin
 
 * JavaScript的类只支持单继承：也就是只能有一个父类
+
+## 多态
+
+* 不同的数据类型进行同一个操作，表现出不同的行为，就是多态的体现
+
+## 字面量的增强
+
+* 属性的简写：Property Shorthand
+* 方法的简写：Method Shorthand
+* 计算属性名：Computed Property  Names
+
+## 解构Destructuring
+
+* 从数组或者对象中方便获取数据的方法，称之为解构Destructuring
+
+  * 是一种特殊的语法，他使我们可以将数组或是在对象“拆包”至一系列变量中
+
+* 数组的解构
+
+  ```javascript
+   // 1数组的解构
+  //1.1基本使用
+      // var [name1,name2,name3] = names
+      // console.log(name1,name2,name3);
+  
+      // 1.2数组的解构顺序，数组有严格的解构顺序，如果不需要中间的某个值，需要用都逗号隔开
+      // var [name1,,name3] = names
+      // console.log(name1,name3);
+  
+      // 1.3解构出数组：当解构出前几个数据后，其余的数据放到一个数组中后
+      // var [name1,name2,...newNames] = names
+      // console.log(name1,name3,newNames);
+       // 1.3解构的默认值：当解构过程中某个数据没有值(即undefined)可以给该数据添加默认值
+       var [name1,name2,name3="defula"] = names
+      console.log(name1,name2,name3);
+  ```
+
+* 对象的解构
+
+  ```javascript
+  // 2对象的解构
+      // 2.1基本使用
+      // var {name,height,age}=obj
+      // console.log(name,age,height);
+  
+      // 2.2解构的顺序：没有顺序，按照key值解构
+      // var {name,age,height}=obj
+      // console.log(name,age,height);
+      // 2.3重命名：解构出来的属性可以进行重命名，重命名之后需要使用新的名称
+      // var {name:Wname,age,height}=obj
+      // console.log(name,age,height);
+      // 2.4默认值：当解构过程中某个属性没有值(即undefined)可以给该属性添加默认值
+  	// var {name:Wname,age,height,address = "zg"}=obj
+      // console.log(name,age,height,address);
+      // 2.5对象剩余属性：当解构出前几个属性后，其余的属性放到一个新对象中
+      var {name,...newObj}=obj
+      console.log(name,newObj);
+  ```
+
+  

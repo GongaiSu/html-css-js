@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+    const s1 = Symbol()
+    const obj ={
+      [s1]:"ss"  
+    }
+    console.log(obj);
+
+
+   const keys =  Object.getOwnPropertySymbols(obj)
+   for (const key of keys) {
+    console.log(obj[key]);
+   }
+
+
+
+
+   const s3 = Symbol("ccc")
+   const obj1 ={
+      [s3]:"ss3"  
+    }
+
+    console.log(obj1);
+    console.log(s3.description);
+    
+
+    const s4 = Symbol.for("bbb")
+    const s5 = Symbol.for("bbb")
+    console.log(s4===s5)//true
+    console.log(Symbol.keyFor(s4));
+  </script>
+</body>
+</html>

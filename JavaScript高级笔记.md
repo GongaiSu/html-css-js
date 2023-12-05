@@ -548,7 +548,7 @@
      function foo(...args){
           console.log("ssss",args);
         }
-    
+      
         foo`我是一个模板字符串，${name},这是一个age属性${age}?`
     ```
 
@@ -575,3 +575,160 @@
 
 * 箭头函数没有显示原型prototype的，所以不能作为构造函数，使用new来创建对象
 * 箭头函数也不绑定this、arguments、super参数
+
+### 展开语法（Spread syntax）
+
+* ```javascript
+  //语法
+  ...要展开的东西（和剩余参数很想，注意）
+  ```
+
+* 必须是可迭代对象：数组/string/arguments
+
+* 展开运算符其实是浅拷贝
+
+#### 使用场景
+
+* 在函数调用时使用
+* 在数组构造时使用
+* 在构建对象字面量时，可以使用展开运算符。
+
+### 数值的表示
+
+* 十进制：100
+* 二进制：0b100
+* 八进制：0o100
+* 十六进制：0x100
+* 数字过长时，可以使用_作为连接符
+
+### Symbol
+
+![image-20231205142148873](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231205142148873.png)
+
+#### 获取对应的值
+
+* getOwnpropertySymbols(对象名)：来获取对象中所有的symbol属性
+
+#### 添加描述
+
+* 在创建Symbol时可以传一个描述
+
+* 使用description来获取属性
+
+* ```javascript
+  const s1 = Symbol("ccc")
+  s1.description
+  ```
+
+#### 相同的Symbol
+
+* 使用Symbol.for(key)方法，传入相同的key时所创建的Symbol值是相同的
+
+* 使用Symbol.keyFor()方法可以获取根据Symbol.for(key)方法创建的key值
+
+* ```javascript
+  const s2 = Symbol.for("bbb")
+  const s3 = Symbol.for("bbb")
+  console.log(s2===s3)//true
+  console.log(Symbol.keyFor(s2))
+  ```
+
+## Set的基本使用
+
+* 是一个新增的数据结构，可以用来保存数据，类似于数组，但是和数组的区别是元素不能重复
+
+### 属性
+
+* size：返回Set中元素的个数
+
+### 常见的方法
+
+* add(value):添加某个元素，返回Set对象本身
+* delete(value):从set中删除和这个值相同的元素，返回boolean类型；
+* has(value):判断set中是否存在某个元素，返回boolean类型
+* clear():清空set中的所有元素，没有返回值
+* forEach(callback,[,thisArg]):通过forEach遍历set
+* 支持for of进行遍历
+
+## WeakSet的基本使用
+
+### 和set的区别
+
+* 区别一：WeakSet只能保存对象类型
+* 区别二：对对象的引用都是弱应用
+
+### 常见方法
+
+* add(value):添加某个元素，返回WeakSet对象本身
+* delete(value):从WeakSet中删除和这个值相同的元素，返回boolean类型；
+* has(value):判断WeakSet中是否存在某个元素，返回boolean类型
+
+## Map的基本使用
+
+* 是一个新增的数据结构，用于存储映射关系
+
+### 属性
+
+* size：返回Map中元素的个数
+
+### 常见的方法
+
+* set(key,value):在Map中添加key，value，并且返回整个Map对象
+* get(key):根据key获取Map中的value
+* has(key):判断是否包括一个key，返回Boolean类型
+* delete(key):根据key删除一个键值对，返回Boolean类型
+* clear():清空所有元素
+* forEach(callback,[,thisArg]):通过forEach遍历Map
+* 支持for of进行遍历
+
+## WeakMap的基本使用
+
+### 和Map的区别
+
+* 区别一：WeakMap的Key必须是对象属性
+* 区别二：WeakMap的key对对象的引用时弱引用
+
+### 常见方法
+
+* set(key,value):在Map中添加key，value，并且返回整个Map对象
+* get(key):根据key获取Map中的value
+* has(key):判断是否包括一个key，返回Boolean类型
+* delete(key):根据key删除一个键值对，返回Boolean类型
+
+# ES7 
+
+## Array Includes
+
+* 用来判断一个数组中是否包含一个指定的元素，返回值为Boolean类型
+
+## 指数运算符
+
+* 使用**运算符，可以对数字来计算乘方
+
+# ES8
+
+## Object values
+
+* 通过Object.values来获取所有的value值
+
+## Object entries
+
+* 通过Object.entries可以获取一个数组，数组中会存放可枚举属性的键值对数组
+  * 可以针对对象、数组、字符串进行操作
+
+## padStart和padEnd
+
+* 分别对字符串的收尾进行填充的
+
+## Trailing Commas
+
+* 允许在函数定义和调用时多加一个逗号
+
+# ES10
+
+## flat flatMap
+
+* flat():会按照一个指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
+* flatMap():首先使用映射函数映射每个元素，然后将结构压缩成一个新数组
+  * 注意一：flatMap时先进行map操作，再做flat的操作
+  * 注意二：flatMap中的flat相当于深度为1；

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    const set = new Set()
+    console.log(set);
+
+
+    set.add(10)
+    set.add(11)
+    set.add(12)
+    set.add(13)
+    set.add(10)
+    set.add(16)
+    console.log(set);
+
+
+
+
+    const arrayList  = [10,20,30,40,66,10,23]
+
+    const setArraylist =  new Set(arrayList)
+    console.log(setArraylist);
+    const arraySetList = Array.from(setArraylist)
+    console.log(arraySetList);
+
+
+    console.log(setArraylist.size)
+
+    console.log(setArraylist.delete(10))
+    console.log(setArraylist);
+
+    setArraylist.forEach(item=>console.log(item))
+
+    console.log(setArraylist.has(10))
+    setArraylist.clear()
+    console.log(setArraylist);
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    const obj ={
+      name:"zs",
+      age:12
+    }
+
+    console.log(obj['name']);
+
+    const objProxy = new Proxy(obj,{
+      set(target,key,newValue){
+        target[key] = newValue
+      },
+      get(target,key){
+        console.log(target);
+        return target[key]
+      }
+
+    })
+
+    console.log(objProxy.name)
+    objProxy.name=13
+    console.log(objProxy.name)
+    
+  </script>
+</body>
+</html>

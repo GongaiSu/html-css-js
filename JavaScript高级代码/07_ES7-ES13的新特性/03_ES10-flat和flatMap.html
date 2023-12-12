@@ -8,5 +8,18 @@
 </head>
 <body>
   
+
+  <script>
+
+    const numArray = [123,[234,355],[[12312312,2222],[212312,34122]]]
+    const newNumArray = numArray.flat(2)
+    console.log(newNumArray);
+
+
+
+    const nameArray =["zs li","wu zl","sh be"]
+    const newNameArray = nameArray.flatMap(item=>item.split(" "))
+    console.log(newNameArray);
+  </script>
 </body>
 </html>

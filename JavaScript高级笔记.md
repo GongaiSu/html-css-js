@@ -732,3 +732,119 @@
 * flatMap():首先使用映射函数映射每个元素，然后将结构压缩成一个新数组
   * 注意一：flatMap时先进行map操作，再做flat的操作
   * 注意二：flatMap中的flat相当于深度为1；
+
+## Object fromEntries
+
+* 可以将Object.entries转成的entries对象转回为元对象
+
+## trimStart、trimEnd
+
+* 去除一个字符串首尾空格可以使用trim
+* 去除一个字符串首部空格可以使用trimStart
+* 去除一个字符串尾部空格可以使用trimEnd
+
+# ES11
+
+## BigInt
+
+* 当数字大于Number.MAX_SAFE_INTEGER时，可能无法展示，需要在数字后面加上n表示为BigInt类型
+
+## Nullish Coalescing Operator
+
+* 空值合并操作符 ??
+
+## Optional Chaining
+
+* 让代码中进行null和undefined判断时更加清晰和简洁
+* 语法是`?.`
+
+## for...in标准化
+
+* 可以用于遍历对象的key
+
+# ES12
+
+## FinalizationRegistry
+
+* 可以让对象被垃圾回收时请求一个回调
+  * 通过调用register方法，注册任何你想要清理回调的对象，传入该对象和所含的值；
+
+## WeakRefs
+
+* 弱应用
+* 使用
+  * 需要对弱引用的对象使用deref()进行结构
+
+## replaceAll
+
+* 替换所有的字符串
+
+# ES13
+
+## method.at()
+
+## Object.hasOwn(obj,propKey)
+
+* 判断一个对象中是否有某个自己的属性
+
+# Proxy
+
+## 监听对象操作
+
+![image-20231207163719865](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231207163719865.png)
+
+## Proxy的基本使用
+
+* 在ES6中，新增了一个Proxy类，这个类从名字就可以看出来，时用于帮助创建一个代理的；
+  * 监听一个对象的相关操作，可以先创建一个代理对象
+  * 之后对该对象的所有操作，都用过代理对象来完成，代理对象可以监听想要对源对象进行哪些操作
+* 实现过程
+  * 需要new Proxy对象，传入需要侦听的对象以及一个处理对象，可以称之为handler
+    * const p = new Proxy(traget,handler)
+  * 后续操作的都是直接对Proxy的操作，而不是原有的对象
+
+## Proxy的set和get捕获器
+
+* 想要监听某些具体的操作，那么需要再handler中添加对象的捕捉器
+* set和get分别对应的是函数类型
+  * set函数有四个参数
+    * target：目标对象（侦听的对象）
+    * property：将被设置的属性key；
+    * value：新属性值
+    * receiver：调用的代理对象
+  * get函数有三个参数
+    * target：目标对象（侦听的对象）
+    * property：被捕获的属性key
+    * receiver：调用的代理对象
+* 其他的捕获器
+  * ![image-20231211163900598](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231211163900598.png)
+
+## Proxy的construct和apply
+
+![image-20231211171244946](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231211171244946.png)
+
+# Reflect
+
+## Reflect的作用
+
+* 是ES6新增的一个API，是一个对象，字面的意思是反射
+
+## 常见的方法
+
+* ![image-20231212110859784](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231212110859784.png)
+
+# Promise
+
+![image-20231212170755054](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231212170755054.png)
+
+## 代码结构
+
+![image-20231212172602628](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231212172602628.png)
+
+## Executor
+
+![](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jshtml-css-jsimage-20231212173446137.png)
+
+## resolve不同的值
+
+![image-20231212173611911](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231212173611911.png)

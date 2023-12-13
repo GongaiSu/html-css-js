@@ -848,3 +848,21 @@
 ## resolve不同的值
 
 ![image-20231212173611911](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231212173611911.png)
+
+## 类方法
+
+### all
+
+![image-20231213171647940](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231213171647940.png)
+
+### allSettled
+
+![](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jshtml-css-jsimage-20231213172149165.png)
+
+### race
+
+* 多个promise中获取最快返回值的那个promise
+
+### any
+
+![image-20231213173547961](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231213173547961.png)

@@ -849,6 +849,10 @@
 
 ![image-20231212173611911](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231212173611911.png)
 
+## then的返回值
+
+![image-20231214164951016](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231214164951016.png)
+
 ## 类方法
 
 ### all
@@ -866,3 +870,19 @@
 ### any
 
 ![image-20231213173547961](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231213173547961.png)
+
+# 迭代器
+
+## 什么是迭代器
+
+![image-20231214170423730](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231214170423730.png)
+
+## 可迭代对象
+
+![image-20231214173246919](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231214173246919.png)
+
+## 原生可迭代对象
+
+* String，Array，Set，Map，arguments对象，NodeList集合
+
+![image-20231214174353771](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231214174353771.png)

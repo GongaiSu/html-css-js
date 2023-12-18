@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+
+  <script>
+    function* foo(){
+      console.log("111");
+      console.log("222");
+      yield
+      console.log("333");
+      console.log("444");
+      console.log("555");
+      yield
+      console.log("666");
+      console.log("777");
+      console.log("888");
+    }
+
+    const s =  foo()
+    s.next()
+    s.next()
+    s.next()
+  </script>
+</body>
+</html>

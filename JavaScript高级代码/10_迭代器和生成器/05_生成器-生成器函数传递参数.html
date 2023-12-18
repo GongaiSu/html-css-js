@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+
+  <script>
+    function* foo(name1){
+      console.log("111",name1);
+      console.log("222");
+      const name2 = yield "aaa"
+      console.log("333",name2);
+      console.log("444",name2);
+      console.log("555",name2);
+      yield "bbb"
+      console.log("666");
+      console.log("777");
+      console.log("888");
+      return "ccc"
+    }
+
+    const s =  foo("next1")
+    console.log(s.next());
+    console.log(s.next("next2"));
+    console.log(s.next());
+    console.log(s.next());
+   
+  </script>
+</body>
+</html>

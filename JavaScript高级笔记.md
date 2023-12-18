@@ -886,3 +886,73 @@
 * String，Array，Set，Map，arguments对象，NodeList集合
 
 ![image-20231214174353771](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231214174353771.png)
+
+## 迭代器的中断
+
+![image-20231218103116106](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218103116106.png)
+
+# 生成器
+
+## 什么是生成器
+
+* 是ES6新增的一种函数控制，使用的方案，它可以让我们更加灵活的控制函数什么时候继续执行、暂停执行等
+
+## 生成器函数
+
+* 和普通函数的区别
+
+  ![image-20231218105000579](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218105000579.png)
+
+## 生成器函数传递参数
+
+![image-20231218112204757](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218112204757.png)
+
+## 生成器函数提前结束
+
+### return函数
+
+* 传递return函数，生成器函数就会结束，之后调用next不会继续生成值
+
+## 生成器函数抛出异常
+
+### throw函数
+
+* ![image-20231218113441143](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218113441143.png)
+
+## 生成器替代迭代器
+
+![image-20231218143249678](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218143249678.png)
+
+# await、async
+
+## 异步函数
+
+* 再普通函数前加一个async关键字就变成了异步函数
+
+## 异步函数的返回值
+
+* 异步函数的返回值是返回一个Promise
+
+## 异步函数的执行流程
+
+![image-20231218161715047](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218161715047.png)
+
+## await
+
+* 必须再异步函数中使用，等待一个promise函数的resolve的返回值，继续执行后面的代码
+
+![image-20231218170857989](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218170857989.png)
+
+# 进程和线程
+
+![image-20231218171411794](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218171411794.png)
+
+![image-20231218171425748](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218171425748.png)
+
+## JavaScript的单线程
+
+![image-20231218174359561](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218174359561.png)
+
+## 浏览器的事件循环
+
+![image-20231218174742457](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218174742457.png)

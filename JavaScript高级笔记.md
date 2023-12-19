@@ -956,3 +956,83 @@
 ## 浏览器的事件循环
 
 ![image-20231218174742457](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231218174742457.png)
+
+# 宏任务和微任务
+
+![image-20231219101728489](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219101728489.png)
+
+* 先执行微任务队列中的任务，在执行宏任务队列中的任务
+
+![image-20231219102302002](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219102302002.png)
+
+# 错误处理方案
+
+![image-20231219111139940](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219111139940.png)
+
+## throw关键字
+
+![image-20231219112602231](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219112602231.png)
+
+## Error类型
+
+![image-20231219112711936](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219112711936.png)
+
+## 异常的捕获
+
+![image-20231219113304638](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219113304638.png)
+
+# Storage
+
+## 认识Storage
+
+![image-20231219140853469](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219140853469.png)
+
+## LocalStorage和sessionStorage的区别
+
+![image-20231219142604604](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219142604604.png)
+
+## Storage常见的属性和方法
+
+### 常见的属性
+
+* length：只读属性，返回一个整数，表示存储再Storage对象中的数据项数量
+
+### 常见的方法
+
+* ![image-20231219143326457](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219143326457.png)
+
+# 正则表达式
+
+## 什么是正则表达式
+
+![image-20231219150912412](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219150912412.png)
+
+## 正则表达式的使用方法
+
+![image-20231219152239033](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219152239033.png)
+
+## 规则
+
+### 修饰符flag
+
+![image-20231219163625991](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219163625991.png)
+
+### 字符类
+
+![image-20231219163412298](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219163412298.png)
+
+### 反向类
+
+![image-20231219163435611](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219163435611.png)
+
+### 锚点
+
+![image-20231219165421360](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219165421360.png)
+
+### 转移字符
+
+![image-20231219170058736](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219170058736.png)
+
+### 集合和范围
+
+![image-20231219172940281](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219172940281.png)

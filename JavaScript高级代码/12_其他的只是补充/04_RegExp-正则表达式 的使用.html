@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+    const re1 = /abc/ig
+
+    const message = "advsdAbc123 ABCdjajhaslabcdjkakd jsjsjdabCdkkafd"
+
+    // if(re1.test(message)){
+    //   console.log("1111");
+    // }else{
+    //   console.log("2222");
+    // }
+
+
+    // const result1 = re1.exec(message)
+    // console.log(result1);
+
+    // const result2 = message.match(re1)
+    // console.log(result2);
+    // const result3 = message.matchAll(re1)
+    // console.log(result3);
+
+
+    // const result4 = message.replace(re1,"123")
+    // console.log(result4);
+
+    const result5 = message.split(re1)
+    console.log(message);
+    console.log(result5);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const message = "我是一个非常爱读书的人，喜欢读《肖生客的救赎》和《厚黑学》，《哈利波特》"
+
+    const reg = /(?:《)(?<name>.+?)(?:》)/ig
+
+    for (const item of message.matchAll(reg)) {
+      console.log(item.groups.name);
+    }
+
+    console.log(message.match(reg));
+    
+  </script>
+</body>
+</html>

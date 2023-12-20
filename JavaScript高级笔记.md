@@ -1036,3 +1036,21 @@
 ### 集合和范围
 
 ![image-20231219172940281](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231219172940281.png)
+
+* 排查范围：除了普通的范围匹配，还有类似`[^...]`的“排除”范围匹配
+
+### 量词
+
+![image-20231220165538919](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231220165538919.png)
+
+### 贪婪(Greedy)和惰性(lazy)模式
+
+![image-20231220171155581](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231220171155581.png)
+
+### 捕获组
+
+![image-20231220171638424](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231220171638424.png)
+
+![image-20231220171953162](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231220171953162.png)
+
+![image-20231220172020984](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231220172020984.png)

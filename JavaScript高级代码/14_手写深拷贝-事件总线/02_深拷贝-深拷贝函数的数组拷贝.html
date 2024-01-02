@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script src="./js/is_object.js"></script>
+  <script>
+    function deepCopy(originValue){
+      if(!isObject(originValue)){
+        return originValue
+      }
+
+      const newObject = Array.isArray(originValue)?[]:{}
+      for (const key in originValue) {
+        newObject[key] = deepCopy(originValue[key])
+      }
+      return newObject
+    }
+
+
+
+    const info = {
+      name:"zs",
+      age:12,
+      friend:{
+        name:"wu",
+        address:{
+          name:"北京",
+          detail:"朝阳区"
+        }
+      }
+    }
+    const arrayInfo = [info]
+    const newInfo = deepCopy(arrayInfo)
+    console.log(newInfo);
+    console.log(info);
+
+  </script>
+</body>
+</html>

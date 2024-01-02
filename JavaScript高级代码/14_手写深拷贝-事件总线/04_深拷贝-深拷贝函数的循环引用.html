@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script src="./js/is_object.js"></script>
+  <script>
+    function deepCopy(originValue,map = new WeakMap()){
+
+      if(typeof originValue ==="symbol"){
+        return Symbol(originValue.description)
+      }
+
+      if(!isObject(originValue)){
+        return originValue
+      }
+
+      if(originValue instanceof Set){
+        const newSet = new Set()
+        for (const value of originValue) {
+          newSet.add(deepCopy(value))
+        }
+        return newSet
+      }
+
+      if(typeof originValue ==="function"){
+        return originValue
+      }
+    
+
+      if(map.get(originValue)){
+        return map.get(originValue)
+      }
+
+      const newObject = Array.isArray(originValue)?[]:{}
+      map.set(originValue,newObject)
+      for (const key in originValue) {
+        newObject[key] = deepCopy(originValue[key],map)
+      }
+
+      const symbols =  Object.getOwnPropertySymbols(originValue)
+      for (const symbolKey of symbols) {
+        newObject[Symbol(symbolKey.description)] = deepCopy(originValue[symbolKey],map)
+      }
+
+      return newObject
+    }
+
+
+    const info = {
+      name:"zs",
+      age:12,
+      friend:"l;ll"
+    }
+
+    info.self = info
+    const newInfo = deepCopy(info)
+    console.log(newInfo);
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script src="./js/is_object.js"></script>
+  <script>
+    function deepCopy(originValue){
+
+      if(typeof originValue ==="symbol"){
+        return Symbol(originValue.description)
+      }
+
+      if(!isObject(originValue)){
+        return originValue
+      }
+
+      if(originValue instanceof Set){
+        const newSet = new Set()
+        for (const value of originValue) {
+          newSet.add(deepCopy(value))
+        }
+        return newSet
+      }
+
+      if(typeof originValue ==="function"){
+        return originValue
+      }
+
+      const newObject = Array.isArray(originValue)?[]:{}
+      for (const key in originValue) {
+        newObject[key] = deepCopy(originValue[key])
+      }
+
+      const symbols =  Object.getOwnPropertySymbols(originValue)
+      for (const symbolKey of symbols) {
+        newObject[Symbol(symbolKey.description)] = deepCopy(originValue[symbolKey])
+      }
+
+      return newObject
+    }
+
+
+    const set = new Set(["abn","bnn","ccs"])
+    const s1 = Symbol("s1")
+    const info = {
+      name:"zs",
+      age:12,
+      friend:{
+        name:"wu",
+        address:{
+          name:"北京",
+          detail:"朝阳区"
+        }
+      },
+      set,
+      s2:Symbol("s2"),
+      [s1]:"aaa"
+    }
+    const newInfo = deepCopy(info)
+    console.log(newInfo);
+    
+
+  </script>
+</body>
+</html>

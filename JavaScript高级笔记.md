@@ -1054,3 +1054,87 @@
 ![image-20231220171953162](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231220171953162.png)
 
 ![image-20231220172020984](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231220172020984.png)
+
+# 防抖和节流
+
+## 防抖
+
+### 认识防抖函数
+
+![image-20231225101906011](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231225101906011.png)
+
+## 节流
+
+### 认识节流函数
+
+![image-20231227161509746](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231227161509746.png)
+
+# 深拷贝
+
+![image-20231228162650021](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20231228162650021.png)
+
+# 网络请求
+
+## 前后端分离
+
+![image-20240102103846459](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102103846459.png)
+
+![image-20240102104010531](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102104010531.png)
+
+## 服务端渲染
+
+![image-20240102103923519](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102103923519.png)
+
+## HTTP的组成
+
+![image-20240102104929640](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102104929640.png)
+
+## HTTP的版本
+
+![image-20240102105735893](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102105735893.png)
+
+## HTTP的请求方式
+
+**![image-20240102110116734](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102110116734.png)
+
+## HTTP Request Header
+
+![image-20240102111225058](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102111225058.png)
+
+![image-20240102111910914](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102111910914.png)
+
+## 常见的响应状态码
+
+![image-20240102112409117](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102112409117.png)
+
+具体的内容：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status
+
+## AJAX发送请求
+
+![image-20240102150129402](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102150129402.png)
+
+## XMLHttpRequest的state状态
+
+![image-20240102152056460](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102152056460.png)
+
+![image-20240102152457265](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102152457265.png)
+
+## 其他事件监听
+
+![image-20240102154407450](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102154407450.png)
+
+## 响应的类型和响应的数据
+
+![image-20240102155221317](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102155221317.png)
+
+## GET和POST的传参
+
+![image-20240102164040698](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102164040698.png)
+
+## Fetch
+
+![image-20240102172534383](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102172534383.png)
+
+### 响应
+
+![image-20240102173221140](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240102173221140.png)

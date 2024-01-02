@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <input type="text">
+  <button class="but1">取消</button>
+  <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+  <script>
+    function myDebounce(fn,defal){
+
+      // 1、记录上一次触发的timer
+      let timer = null
+      const myFun = function(...args){
+        // 如果上一次timer不为空，则清除上次的请求
+        if(timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+          fn.apply(this,args)
+          timer = null
+        }, defal);
+      }
+
+      // 添加取消功能
+
+      myFun.cancel = function(){
+        if(timer) clearTimeout(timer)
+        timer = null
+      }
+      return myFun
+    }
+
+
+
+
+    const inputEl = document.querySelector("input")
+    const but1El = document.querySelector(".but1")
+    let counter = 1
+    // inputEl.oninput = _.debounce(function(){
+    //   console.log(`发送网络请求${counter++}的次数`,this.value);
+    // },1000)
+    const inputDebounce = myDebounce(function(event){
+      console.log(`发送网络请求${counter++}的次数`,this.value,event);
+    },5000)
+
+    console.log(inputDebounce);
+    inputEl.oninput =  inputDebounce
+    but1El.onclick = function(){
+      console.log("点击了取消按钮");
+      inputDebounce.cancel()
+    }
+
+
+  </script>
+</body>
+</html>

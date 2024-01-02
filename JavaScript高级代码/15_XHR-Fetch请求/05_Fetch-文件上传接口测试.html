@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <input type="file" class="files">
+  <button class="upload">上传</button>
+
+  <script>
+
+    const btnELement =  document.querySelector(".upload")
+    btnELement.onclick = async function(){
+
+     
+      const filesELt = document.querySelector(".files")
+      const form = new FormData()
+      form.append("avatar",filesELt.files[0])
+
+      const response = await fetch("http://123.207.32.32:1888/02_param/upload",{
+        method:"post",
+        body:form
+      })
+      const rep = await response.json()
+      console.log(rep);
+    }
+  </script>
+</body>
+</html>

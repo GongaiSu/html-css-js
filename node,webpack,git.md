@@ -14,3 +14,26 @@
 * nvm list：展示本地安装的node所有版本
 * nvm install latest：安装node最新的版本
 * nvm use ：切换node版本
+
+## Node的输入参数
+
+![image-20240103140912860](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103140912860.png)
+
+## Node的输出
+
+![image-20240103141131212](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103141131212.png)
+
+## 常见的全局对象
+
+![image-20240103143940180](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103143940180.png)
+
+![image-20240103153541459](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103153541459.png)
+
+## 特殊的全局对象
+
+* __dirname:获取当前文件所在的路径
+* __filename:获取当前文件所在的路径和文件名称
+
+## global和window的区别
+
+![image-20240103154525340](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103154525340.png)

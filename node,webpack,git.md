@@ -37,3 +37,47 @@
 ## global和window的区别
 
 ![image-20240103154525340](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103154525340.png)
+
+## CommonJS
+
+### 概述
+
+![image-20240103212811775](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103212811775.png)
+
+### exports导出
+
+![image-20240103214051307](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103214051307.png)
+
+### module.exports导出
+
+![image-20240103215140412](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103215140412.png)
+
+### require的细节
+
+![image-20240103220221951](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103220221951.png)
+
+#### 情况一
+
+* X是一个Node核心模块，比如path、http
+  * 直接返回核心模块，并且停止查找
+
+#### 情况二
+
+* X是以./或../或/(根目录)开头的
+* ![image-20240103220812420](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103220812420.png)
+
+#### 情况三
+
+* 直接是一个X（没有路径），并且X不是一个核心模块
+
+* ![image-20240103221516758](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103221516758.png)
+
+### 模块加载过程
+
+![image-20240103224120686](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103224120686.png)
+
+## ES Module
+
+### 认识ES Module
+
+![image-20240103230622941](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103230622941.png)

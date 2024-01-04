@@ -165,5 +165,47 @@ export {sayHello} from "./bar.js"
 * 还有一种项目依赖关系是对等依赖，也就是你依赖的一个包，他必须是以另一个宿主包为前提的；
 * 比如element-plus是依赖于vue3的，ant design是依赖于react、react-dom；
 
-### 依赖的版本管理
+#### 依赖的版本管理
+
+![image-20240104214201100](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240104214201100.png)
+
+#### ![image-20240104214343376](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240104214343376.png)
+
+### npm install命令
+
+* 安装npm包分两种情况
+  * 全局安装（global install）：npm install webpack -g;
+  * 项目（局部）安装（local install）：npm install webpack
+* 全局安装
+  * 全局安装是直接将某个包安装到全局
+  * 比如全局安装yarn
+
+### package-lock.json
+
+![image-20240104221549902](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240104221549902.png)
+
+### npm install 原理
+
+![image-20240104222417908](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240104222417908.png)
+
+![image-20240104222447208](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240104222447208.png)
+
+### npm的其他命令
+
+* 卸载某个依赖包：
+  * npm uninstall package
+  * npm uninstall package --save-dev
+  * npm uninstall package -D
+* 强制重新build
+  * npm rebuild
+* 清楚缓存
+  * npm cache clean
+
+* 详细文档：https://docs.npmjs.com/cli/v8/commands
+
+## yarn工具
+
+![image-20240104225719034](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240104225719034.png)
+
+## cnpm
 

@@ -1,0 +1,9 @@
+{
+  "name": "gyf_util",
+  "version": "1.1.1",
+  "description": "a javaScript util",
+  "main": "index.js",
+  "keywords": ["gyf"],
+  "author": "gyf",
+  "license": "MIT"
+}

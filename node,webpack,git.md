@@ -8,7 +8,7 @@
 
 ![image-20240102230752014](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240102230752014.png)
 
-## Node的版本工具
+## Node的版本工具(NVM)
 
 * nvm安装：https://github.com/coreybutler/nvm-windows/releases
 * nvm list：展示本地安装的node所有版本
@@ -209,3 +209,42 @@ export {sayHello} from "./bar.js"
 
 ## cnpm
 
+![image-20240105094004899](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105094004899.png)
+
+## npx
+
+![image-20240105102630406](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105102630406.png)
+
+![image-20240105102647193](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105102647193.png)
+
+## npm发布
+
+![image-20240105110410340](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105110410340.png)
+
+## pnpm
+
+### 什么是pnpm
+
+![image-20240105150035119](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105150035119.png)
+
+### 硬链接和软连接的概念
+
+![image-20240105151000852](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105151000852.png)
+
+![image-20240105152014974](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105152014974.png)
+
+### pnpm做了什么
+
+![image-20240105152546938](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105152546938.png)
+
+### pnpm创建非扁平的 node_modules 目录
+
+![image-20240105153541334](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105153541334.png)
+
+### 部分命令
+
+![image-20240105164504602](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105164504602.png)
+
+### pnpm的存储store
+
+![image-20240105165432758](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105165432758.png)

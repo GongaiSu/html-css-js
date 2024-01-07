@@ -1,0 +1,13 @@
+.commont{
+  font-size: 20px;
+  color:red;
+  background-color: #66666666;
+  user-select: none;
+}
+
+
+.div_bg{
+  width: 100px;
+  height: 100px;
+  background-image: url(../img/gg.jpg);
+}

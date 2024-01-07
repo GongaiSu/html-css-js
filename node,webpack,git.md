@@ -248,3 +248,161 @@ export {sayHello} from "./bar.js"
 ### pnpm的存储store
 
 ![image-20240105165432758](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240105165432758.png)
+
+## webpack
+
+### 内置的path模块
+
+![image-20240105220145047](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240105220145047.png)
+
+### path的api
+
+![image-20240105224959869](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240105224959869.png)
+
+### webpack是什么
+
+![image-20240105232728119](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240105232728119.png)
+
+![image-20240105232858342](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240105232858342.png)
+
+### webpack默认打包
+
+![image-20240105235214019](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240105235214019.png)
+
+### webpack配置文件
+
+![image-20240105235303186](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240105235303186.png)
+
+### 指定配置文件
+
+![image-20240105235330516](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240105235330516.png)
+
+### loader
+
+#### loader配置
+
+![image-20240106154716849](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106154716849.png)
+
+![image-20240106154733455](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106154733455.png)
+
+#### PostCSS
+
+![image-20240106211544751](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106211544751.png)
+
+##### postcss-loader
+
+![image-20240106210937957](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106210937957.png)
+
+##### 单独的配置文件
+
+![image-20240106211239951](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106211239951.png)
+
+##### postcss-preset-env
+
+![image-20240106211351896](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106211351896.png)
+
+#### 认识asset module type
+
+![image-20240106220304422](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106220304422.png)
+
+##### asset module type的使用
+
+![image-20240106222240448](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106222240448.png)
+
+##### url-loader的limit效果
+
+![image-20240106222338630](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106222338630.png)
+
+#### babel
+
+##### babel是什么
+
+![image-20240106230659404](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106230659404.png)
+
+##### 插件的使用
+
+![image-20240106230813331](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106230813331.png)
+
+##### babel的预设
+
+![image-20240106232525355](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106232525355.png)
+
+##### babel-loader
+
+![image-20240106232920840](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106232920840.png)
+
+##### babel-preset
+
+![image-20240106233004070](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240106233004070.png)
+
+### resolve模板解析
+
+![image-20240107194357338](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107194357338.png)
+
+#### 确定文件还是文件夹
+
+![image-20240107194447836](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107194447836.png)
+
+#### extensions和alias配置
+
+![image-20240107194655356](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107194655356.png)
+
+### Plugin
+
+#### 认识Plugin
+
+![image-20240107200316867](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107200316867.png)
+
+#### CleanWebpackPlugin
+
+![image-20240107201018662](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107201018662.png)
+
+#### HtmlWebpackPlugin
+
+![image-20240107204312045](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107204312045.png)
+
+##### 生成index.html分析
+
+![image-20240107204543846](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107204543846.png)
+
+##### 自定义HTML模板
+
+![image-20240107204732650](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107204732650.png)
+
+##### 自定义模板数据填充
+
+![image-20240107205009361](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107205009361.png)
+
+#### DefinePlugin
+
+![image-20240107211218576](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107211218576.png)
+
+### Mode
+
+![image-20240107211400082](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107211400082.png)
+
+#### 更多配置
+
+![image-20240107211439094](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107211439094.png)
+
+### webpack-dev-server
+
+![image-20240107212505477](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107212505477.png)
+
+#### 认识模块热替换(HMR)
+
+![image-20240107213533675](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107213533675.png)
+
+#### 开启HMR
+
+![image-20240107213617888](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107213617888.png)
+
+#### 其他配置
+
+##### host配置
+
+![image-20240107214720642](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107214720642.png)
+
+##### prot、open、comperess
+
+![image-20240107214924466](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107214924466.png)

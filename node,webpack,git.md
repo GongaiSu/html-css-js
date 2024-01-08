@@ -406,3 +406,25 @@ export {sayHello} from "./bar.js"
 ##### prot、open、comperess
 
 ![image-20240107214924466](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240107214924466.png)
+
+### 区分开发和生成和环境
+
+![image-20240108101736303](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240108101736303.png)
+
+##### 入口文件
+
+![image-20240108101606692](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240108101606692.png)
+
+# GIT
+
+## Git常用的命令
+
+* git status：查看文件的状态
+* git add :添加文件到暂存区
+* gti commit -a -m ""：文件添加并且提交
+
+## Git的忽略文件
+
+* 创建一个名为.gitignore文件
+* 模板文件地址：https://github.com/github/gitignore
+

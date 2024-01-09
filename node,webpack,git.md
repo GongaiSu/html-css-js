@@ -433,6 +433,12 @@ export {sayHello} from "./bar.js"
 * 创建一个名为.gitignore文件
 * 模板文件地址：https://github.com/github/gitignore
 
+## Git的配置选项
+
+* git config --global user.name "用户名"：设置用户名
+* git config --global user.email "邮箱"：设置邮箱
+* git config --list ：查看当前的配置信息
+
 ## 版本回退
 
 * git reset --hard HEAD^：回退到上个版本
@@ -452,8 +458,104 @@ export {sayHello} from "./bar.js"
 * git remote add <shortname> <url>:添加远程地址
 * git remote rename gitlab glab：重命名远程地址
 * git remote remove gitlab：移除远程地址
-
 * git fetch：获取最新的代码
   * get fetch origin ：从origin获取最新的代码
-* git  merge ：将最新的代码合并到本地仓库
+* git  merge ：将最新的代码合并到本地仓库;
 * git pull：是get fetch + git meage 
+
+## vscode将git设置为默认终端
+
+* 历史文件
+
+```json
+{
+    "workbench.colorTheme": "Atom One Dark",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false,
+        "html": false,
+        "vue": false,
+        "javascript": false
+    },
+    "update.mode": "none",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "files.autoSave": "afterDelay",
+    "workbench.startupEditor": "none",
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
+    "diffEditor.wordWrap": "on",
+    "editor.wordWrap": "on",
+    "explorer.confirmDelete": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "terminal.integrated.profiles.windows": {
+        
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            // "source": "Git Bash"
+            "path": "D:\\git\\Git\\bin\\bash.exe", //设置并添加git-bash的local安装路径
+            "args": []
+        }
+    },
+}
+```
+
+* 修改文件
+
+```json
+{
+    "workbench.iconTheme": "vscode-icons",
+    "git.ignoreWindowsGit27Warning": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "terminal.integrated.profiles.windows": {
+    
+
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git-Bash": {
+            "path": "D:\\git\\Git\\bin\\bash.exe",
+            "args": []
+
+        },
+        "Windows PowerShell": {
+            "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Git-Bash"
+}
+```
+
+## 本地分支的上游分支
+
+![image-20240109231704477](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240109231704477.png)
+
+## 拒绝合并不相干的历史
+
+![image-20240109231941697](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240109231941697.png)

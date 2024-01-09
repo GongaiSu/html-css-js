@@ -422,9 +422,38 @@ export {sayHello} from "./bar.js"
 * git status：查看文件的状态
 * git add :添加文件到暂存区
 * gti commit -a -m ""：文件添加并且提交
+* git log :查看提交日志
+  * git log --pretty=oneline 一行展示日志
+  * git log --pretty=oneline --graph 多分支展示
+* git reflog ：查看所有的日志包括版本回退的内容
+* git reset：版本回退
 
 ## Git的忽略文件
 
 * 创建一个名为.gitignore文件
 * 模板文件地址：https://github.com/github/gitignore
 
+## 版本回退
+
+* git reset --hard HEAD^：回退到上个版本
+* git reset --hard HEAD~100：回退到上100个版本
+* git reset --hard 24sd4cd :回退到指定的id版本
+
+## SSH密钥
+
+* 生成公钥
+  * ssh-keygen -t ed25519 -C "邮箱"
+  * ssh-keygen -t rsa -b 2048 -C "邮箱"
+
+## 远程常用命令
+
+* git remote ：查看远程地址
+  * git remote -v ：v是verbose
+* git remote add <shortname> <url>:添加远程地址
+* git remote rename gitlab glab：重命名远程地址
+* git remote remove gitlab：移除远程地址
+
+* git fetch：获取最新的代码
+  * get fetch origin ：从origin获取最新的代码
+* git  merge ：将最新的代码合并到本地仓库
+* git pull：是get fetch + git meage 

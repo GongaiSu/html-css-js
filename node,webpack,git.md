@@ -455,9 +455,10 @@ export {sayHello} from "./bar.js"
 
 * git remote ：查看远程地址
   * git remote -v ：v是verbose
-* git remote add <shortname> <url>:添加远程地址
-* git remote rename gitlab glab：重命名远程地址
-* git remote remove gitlab：移除远程地址
+  * git remote add <shortname> <url>:添加远程地址
+  * git remote rename gitlab glab：重命名远程地址
+  * git remote remove gitlab：移除远程地址
+* git clone ：从远程服务器克隆代码
 * git fetch：获取最新的代码
   * get fetch origin ：从origin获取最新的代码
 * git  merge ：将最新的代码合并到本地仓库;
@@ -559,3 +560,29 @@ export {sayHello} from "./bar.js"
 ## 拒绝合并不相干的历史
 
 ![image-20240109231941697](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240109231941697.png)
+
+## Git标签（tag）
+
+### 创建tag
+
+![image-20240110164729168](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240110164729168.png)
+
+## Git分支
+
+### 创建分支
+
+* git branch 分支名
+
+![image-20240110173222806](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240110173222806.png)
+
+### 分支切换
+
+* git checkout 分支名
+
+### 分支提交
+
+![image-20240110173313569](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240110173313569.png)
+
+### 分支切换加创建
+
+* git checkout -b 分支名

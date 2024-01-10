@@ -586,3 +586,33 @@ export {sayHello} from "./bar.js"
 ### 分支切换加创建
 
 * git checkout -b 分支名
+
+### 分支开发合并
+
+![image-20240110222635395](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240110222635395.png)
+
+### 查看和删除分支
+
+* git branch ：查看当前所有的分支
+* git branch -v ：同时查看最后一次提交
+
+* git branch --merged：查看所有合并到当前分支的分支
+* git branch --no-merged ：查看所有没有合并到当前分支的分支
+* git branch –d 分支名： 删除当前分支
+* git branch –D 分支名： 强制删除某一个分支
+
+### 远程分支
+
+![image-20240110232710784](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240110232710784.png)
+
+### rebase的用法
+
+![image-20240110232758307](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240110232758307.png)
+
+### rebase和merge的选择
+
+![image-20240110232830971](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240110232830971.png)
+
+## 常见命令速查
+
+![image-20240110232931782](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240110232931782.png)

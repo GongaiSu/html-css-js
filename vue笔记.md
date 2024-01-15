@@ -77,12 +77,73 @@
 
 * 当一个模板中有多个元素或组件时，当这些元素和组件的重新渲染依赖于某个/些元素或组件才进行渲染，可以使用v-memo进行控制。
 
-* ```ht
+* ```html
   <!--只有valueA, valueB其中一个发生了变化，div中的数据才会刷新-->
   <div v-memo="[valueA, valueB]">
     ...
   </div>
   ```
 
-  
 
+# v-bind
+
+* 
+
+# v-on
+
+## 基本使用
+
+```html
+
+  <div id="app">
+    <h2>{{counter}}</h2>
+      <button v-on:mousemove="mouseMove" v-on:click="onClick">+1</button>
+      <!--语法糖写法-->
+    <button @mousemove="mouseMove" @click="onClick">+1</button>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return{
+            counter:1
+        }
+      },
+      methods: {
+          //鼠标事件
+        mouseMove(){
+            this.counter++
+        },
+          //点击事件
+        onClick(){
+            this.counter--
+        }
+      },
+    })
+
+    app.mount('#app')
+```
+
+## 参数传递
+
+### 情况一
+
+* 如果该方法不需要额外参数，那么方法后的()可以不添加。
+  * 但是注意：如果方法本身中有一个参数，那么会默认将原生事件event参数传递进去
+
+### 情况二
+
+* 如果需要同时传入某个参数，同时需要event时，可以通过$event传入事件。
+
+## 修饰符
+
+* p.stop - 调用 event.stopPropagation()。
+* p.prevent - 调用 event.preventDefault()。
+* p.capture - 添加事件侦听器时使用 capture 模式。
+* p.self - 只当事件是从侦听器绑定的元素本身触发时才触发回调。
+* p.{keyAlias} - 仅当事件是从特定键触发时才触发回调。
+* p.once - 只触发一次回调。
+* p.left - 只当点击鼠标左键时触发。
+* p.right - 只当点击鼠标右键时触发。
+* p.middle - 只当点击鼠标中键时触发。
+* p.passive - { passive: true } 模式添加侦听器

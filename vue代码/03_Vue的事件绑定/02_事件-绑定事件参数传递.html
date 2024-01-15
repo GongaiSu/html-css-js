@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <div id="app">
+    <h2>{{message}}</h2>
+    <button @click="onClick">按钮</button>
+
+    <!--传具体的参数-->
+    <button @click="onClick1('zs',18)">按钮1</button>
+    <!--传具体的参数和event-->
+    <button @click="onClick2('zs',18,$event)">按钮2</button>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return{
+          message:"你好，vue"
+        }
+      },
+      methods: {
+        onClick(event){
+            console.log("按钮点击了",event);
+        },
+        onClick1(name,age){
+            console.log("按钮点击了",name,age);
+        },
+        onClick2(name,age,event){
+            console.log("按钮点击了",name,age,event);
+        }
+      },
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+</html>

@@ -566,7 +566,7 @@
 
 ##### 常见的方法
 
-* preventDefault：取数事件的默认行为；
+* preventDefault：取消事件的默认行为；
 * stopPropagation：阻止事件的进一步传递（冒泡或者捕获都可以阻止）
 
 #### EventTarget类
@@ -586,18 +586,18 @@
 
 ##### 常见的鼠标事件
 
-| 属性          | 描述                                         |
-| ------------- | -------------------------------------------- |
-| onclick       | 当用户点击某个对象时调用的事件句柄           |
-| oncontextmenu | 当用户点击鼠标右键打开上下文菜单时触发       |
-| ondblclick    | 当用户双击某个对象时调用的事件句柄           |
-| onmousedown   | 鼠标按钮被按下                               |
-| onmouseup     | 鼠标按钮被松开                               |
-| onmouseover   | 鼠标移到某元素之上。（支持冒泡）             |
-| onmouseout    | 鼠标从某元素移开。（支持冒泡）               |
-| onmouseenter  | 当鼠标指针移动到元素上时触发。（不支持冒泡） |
-| onmouseleave  | 当鼠标指针移出元素时触发。（不支持冒泡）     |
-| onmousemove   | 鼠标被移动                                   |
+| 属性         | 描述                                         |
+| ------------ | -------------------------------------------- |
+| onclick      | 当用户点击某个对象时调用的事件句柄           |
+| contextmenu  | 当用户点击鼠标右键打开上下文菜单时触发       |
+| ondblclick   | 当用户双击某个对象时调用的事件句柄           |
+| onmousedown  | 鼠标按钮被按下                               |
+| onmouseup    | 鼠标按钮被松开                               |
+| onmouseover  | 鼠标移到某元素之上。（支持冒泡）             |
+| onmouseout   | 鼠标从某元素移开。（支持冒泡）               |
+| onmouseenter | 当鼠标指针移动到元素上时触发。（不支持冒泡） |
+| onmouseleave | 当鼠标指针移出元素时触发。（不支持冒泡）     |
+| onmousemove  | 鼠标被移动                                   |
 
 ##### mouseover和mouseenter
 
@@ -735,5 +735,3 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/Screen
     * 如果对象中实现了toJSON方法，在解析式会直接返回对象中toJSON返回的值
   * parse方法：解析JSON字符串，转回对应的JavaScript类型 
     * 参数二reviver：返回之前对所等到的对象执行操作
-
-# 

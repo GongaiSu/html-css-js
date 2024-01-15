@@ -11,13 +11,15 @@
 
   <div id="app">
     <h2>{{message}}</h2>
+    <img v-bind:src="imgUrl" alt="">
   </div>
   <script src="../lib/vue.js"></script>
   <script>
     const app = Vue.createApp({
       data(){
         return{
-          message:"你好，vue"
+          message:"你好，vue",
+          imgUrl:"http://p1.music.126.net/uD_aR_6GwxPKDM3SPwFW_g==/109951169259745568.jpg"
         }
       }
     })

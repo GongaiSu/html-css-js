@@ -10,14 +10,27 @@
   
 
   <div id="app">
-    <h2>{{message}}</h2>
+    <div v-memo="[message,info]">
+      <h2>{{message}}</h2>
+      <h2>{{info}}</h2>
+      <h2>{{age}}</h2>
+    </div>
+    <button @click="updateInfo">v-memo测试</button>
   </div>
   <script src="../lib/vue.js"></script>
   <script>
     const app = Vue.createApp({
       data(){
         return{
-          message:"你好，vue"
+          message:"你好，vue",
+          info:"ddd",
+          age:"sss"
+        }
+      },
+      methods:{
+        updateInfo(){
+          // this.message = "jjsjsjsj"
+          this.age = "sssdd"
         }
       }
     })

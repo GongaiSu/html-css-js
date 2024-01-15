@@ -10,7 +10,8 @@
   
 
   <div id="app">
-    <h2>{{message}}</h2>
+    <!-- 使用v-pre恢复原始的标签 -->
+    <h2 v-pre>{{message}}</h2>
   </div>
   <script src="../lib/vue.js"></script>
   <script>

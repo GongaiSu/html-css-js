@@ -187,7 +187,70 @@
   * 如果我们的原生需要在显示和隐藏之间频繁的切换，那么使用v-show；
   * 如果不会频繁的发生切换，那么使用v-if；
 
+# v-for
+
+## 基本使用
+
+* v-for的基本格式是 "item in 数组"：
+  * 数组通常是来自data或者prop，也可以是其他方式；
+  * item是我们给每项元素起的一个别名，这个别名可以自定来定义；
+* 我们知道，在遍历一个数组的时候会经常需要拿到数组的索引：
+  * 如果我们需要索引，可以使用格式： "(item, index) in 数组"；
+  * 注意上面的顺序：数组元素项item是在前面的，索引项index是在后面的
+
+## 其他类型
+
+* v-for也支持遍历对象，并且支持有一二三个参数： 
+  * 一个参数： "value in object"; 
+  * 二个参数： "(value, key) in object"; 
+  * 三个参数： "(value, key, index) in object";
+*  v-for同时也支持数字的遍历： 
+  * 每一个item都是一个数字；
+* v-for也可以遍历其他可迭代对象(Iterable)
+
+## 数组更新检测
+
+![image-20240117224044653](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240117224044653.png)
+
 # computed
 
 ## 什么是计算属性
 
+* 官方并没有给出直接的概念解释；
+* 而是说：对于任何包含响应式数据的复杂逻辑，你都应该使用计算属性；
+* 计算属性将被混入到组件实例中
+  *  所有 getter 和 setter 的 this 上下文自动地绑定为组件实例；
+
+## 用法
+
+* 选项：computed
+* 类型：{ [key: string]: Function | { get: Function, set: Function } }
+
+## 计算属性的缓存
+
+* 计算属性是有缓存的，在数据不发生变化时，计算属性是不需要重新计算的
+
+# watch
+
+## 什么是侦听器
+
+* 开发中我们在data返回的对象中定义了数据，这个数据通过插值语法等方式绑定到template中；
+* 当数据变化时，template会自动进行更新来显示最新的数据；
+* 但是在某些情况下，我们希望在代码逻辑中监听某个数据的变化，这个时候就需要用侦听器watch来完成了；
+
+## 用法
+
+* 选项：watch
+* 类型：{ [key: string]: string | Function | Object | Array}
+
+## 配置
+
+* deep：可以监听到对象内部属性的变化
+* immediate：在第一次渲染的时候就会监听
+
+## 其他用法
+
+* 我们可以在created的生命周期中，使用 this.$watchs 来侦听；
+  * 第一个参数是要侦听的源；
+  * 第二个参数是侦听的回调函数callback；
+  * 第三个参数是额外的其他选项，比如deep、immediate；

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <div id="app">
+    <ul>
+        <li v-for="(movie,index) in movies">{{movie}}--{{index+1}}</li>
+    </ul>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return{
+          message:"你好，vue",
+          movies: ["星际穿越", "失落沮喪的城市", "时光倒流", "未来之谜", "幻想之门", "奇幻冒险"]
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+</html>

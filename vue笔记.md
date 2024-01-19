@@ -254,3 +254,84 @@
   * 第一个参数是要侦听的源；
   * 第二个参数是侦听的回调函数callback；
   * 第三个参数是额外的其他选项，比如deep、immediate；
+
+# v-model
+
+## 基本使用
+
+* 代码逻辑中获取到用户提交的数据，我们通常会使用v-model指令来完成
+  * v-model指令可以在表单 input、textarea以及select元素上创建双向数据绑定；
+  * 它会根据控件类型自动选取正确的方法来更新元素；
+  * 尽管有些神奇，但 v-model 本质上不过是语法糖，它负责监听用户的输入事件来更新数据，并在某种极端场景下进行一些特殊处理；
+
+## v-model的原理
+
+* v-model的原理其实是背后有两个操作：
+
+  * v-bind绑定value属性的值；
+  * v-on绑定input事件监听到函数中，函数会获取最新的值赋值到绑定的属性中；
+
+  ![image-20240119160508075](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119160508075.png)
+
+## v-model绑定textarea
+
+![image-20240119160553284](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119160553284.png)
+
+## v-model绑定checkbox
+
+### 单个勾选框
+
+* v-model即为布尔值。 
+* 此时input的value属性并不影响v-model的值。
+
+![image-20240119160647425](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119160647425.png)
+
+### 多个勾选框
+
+* 当是多个复选框时，因为可以选中多个，所以对应的data中属性是一个数组。
+* 当选中某一个时，就会将input的value添加到数组中。
+
+![image-20240119160733302](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119160733302.png)
+
+## v-model绑定radio
+
+![image-20240119160804304](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119160804304.png)
+
+## v-model绑定select
+
+### 单选
+
+* 只能选中一个值 
+
+  * v-model绑定的是一个值； 
+  * 当我们选中option中的一个时，会将它对应的value赋值到fruit中；
+
+  ![image-20240119160902114](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119160902114.png)
+
+### 多选
+
+* 只能选中一个值
+
+  * v-model绑定的是一个数组；
+  * 当选中多个值时，就会将选中的option对应的value添加到数组fruits中；
+
+  ![image-20240119161007167](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119161007167.png)
+
+## v-model的修饰符
+
+### lazy
+
+* 默认情况下，v-model在进行双向绑定时，绑定的是input事件，那么会在每次内容输入后就将最新的值和绑定的属性进行同步；
+* 如果我们在v-model后跟上lazy修饰符，那么会将绑定的事件切换为 change 事件，只有在提交时（比如回车）才会触发；
+
+![image-20240119161107892](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119161107892.png)
+
+### number
+
+![image-20240119161149259](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119161149259.png)
+
+### trim
+
+* 如果要自动过滤用户输入的首尾空白字符，可以给v-model添加 trim 修饰符：
+
+  ![image-20240119161241004](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119161241004.png)

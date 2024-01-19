@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     table {
+      border-collapse: collapse;
+      /* text-align: center; */
+    }
+
+    thead {
+      background-color: #f5f5f5;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 8px 16px;
+    }
+
+    .active {
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div id="app">
+    <table>
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>书籍名称</th>
+          <th>出版日期</th>
+          <th>价格</th>
+          <th>购买数量</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr 
+          v-for="(item,index) in books"
+          :key="item.id"
+          :class="{active:index ===currentIndex}"
+          @click="liClick(index)"
+        >
+          <td>{{index+1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.date}}</td>
+          <td>{{formatPrice(item.price)}}</td>
+          <td>
+            <button @click="decreaseCount(index,item)" :disabled="item.count<=1">-</button>
+            {{item.count}}
+            <button @click="increaseCount(index,item)">+</button>
+          </td>
+          <td>
+            <button @click="removeBook(index,item)">移除</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>总价:{{formatPrice(sumPrice)}}</h2>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="./data/data.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return{
+          books,
+          currentIndex : -1
+        }
+      },
+      computed:{
+        sumPrice(){
+          let sum=0;
+          for (const item of this.books) {
+            sum += (item.price * item.count)
+          }
+          return sum
+        },
+      },
+      methods:{
+        formatPrice(price){
+          return "￥"+price
+        },
+        increaseCount(index,item){
+          // this.books[index].count++
+          item.count++
+        },
+        decreaseCount(index,item){
+          // this.books[index].count--
+          item.count--
+        },
+        removeBook(index,item){
+          // this.books.remove(item)
+          this.books.splice(index,1)
+        },
+        liClick(index){
+          this.currentIndex = index
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <div id="app">
+    <label for="checkbox1">
+     <input id="checkbox1" type="checkbox" v-model="isAgine"> 同意协议
+    </label>
+    <h2>{{isAgine}}</h2>
+    <hr>
+
+    <template v-for="item of obj ">
+      <label :for="item.key" >
+        <input type="checkbox" :id="item.key" :value="item.key" v-model="hobbies">{{item.text}}
+      </label>
+    </template>
+    <h2>{{hobbies}}</h2>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return{
+         isAgine:false,
+         obj:[
+          {key:"sing",text:"唱"},
+          {key:"jump",text:"跳"},
+          {key:"rap",text:"rap"},
+          {key:"basketball",text:"篮球"}
+         ],
+         hobbies:[]
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+</html>

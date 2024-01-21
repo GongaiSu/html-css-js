@@ -2,11 +2,11 @@
 
 ## Node.js架构
 
-![image-20240102225526387](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240102225526387.png)
+![image-20240119215930361](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119215930361.png)
 
 ## 应用场景
 
-![image-20240102230752014](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240102230752014.png)
+![image-20240119215956643](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119215956643.png)
 
 ## Node的版本工具(NVM)
 
@@ -17,17 +17,19 @@
 
 ## Node的输入参数
 
-![image-20240103140912860](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103140912860.png)
+![image-20240119220040224](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220040224.png)
 
 ## Node的输出
 
-![image-20240103141131212](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103141131212.png)
+![image-20240119220101862](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220101862.png)
 
 ## 常见的全局对象
 
-![image-20240103143940180](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103143940180.png)
+![image-20240119220120294](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220120294.png)
 
-![image-20240103153541459](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103153541459.png)
+![image-20240119220134918](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220134918.png)
+
+![image-20240119220158661](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220158661.png)
 
 ## 特殊的全局对象
 
@@ -36,25 +38,25 @@
 
 ## global和window的区别
 
-![image-20240103154525340](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240103154525340.png)
+![image-20240119220214977](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220214977.png)
 
 ## CommonJS
 
 ### 概述
 
-![image-20240103212811775](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103212811775.png)
+![image-20240119220254263](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220254263.png)
 
 ### exports导出
 
-![image-20240103214051307](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103214051307.png)
+![image-20240119220307822](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220307822.png)
 
 ### module.exports导出
 
-![image-20240103215140412](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103215140412.png)
+![image-20240119220320435](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220320435.png)
 
 ### require的细节
 
-![image-20240103220221951](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103220221951.png)
+![image-20240119220340462](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220340462.png)
 
 #### 情况一
 
@@ -64,31 +66,35 @@
 #### 情况二
 
 * X是以./或../或/(根目录)开头的
-* ![image-20240103220812420](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103220812420.png)
+* ![image-20240119220400797](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220400797.png)
 
 #### 情况三
 
 * 直接是一个X（没有路径），并且X不是一个核心模块
 
-* ![image-20240103221516758](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103221516758.png)
+* <img src="https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220425987.png"/>
 
 ### 模块加载过程
 
-![image-20240103224120686](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103224120686.png)
+![image-20240119220522088](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220522088.png)
+
+### CommonJS规范缺点
+
+![image-20240119220640881](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220640881.png)
 
 ## ES Module
 
 ### 认识ES Module
 
-![image-20240103230622941](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240103230622941.png)
+![image-20240119220742683](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220742683.png)
 
 ### export关键字
 
-![image-20240104113434748](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240104113434748.png)
+![image-20240119220754653](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220754653.png)
 
 ### import关键字
 
-![image-20240104113355677](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240104113355677.png)
+![image-20240119220806382](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220806382.png)
 
 ### export和import结合
 
@@ -98,15 +104,15 @@ export {sayHello} from "./bar.js"
 
 ### default用法
 
-![image-20240104142405144](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240104142405144.png)
+![image-20240119220825343](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220825343.png)
 
 ### import函数
 
-![image-20240104142938131](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240104142938131.png)
+![image-20240119220837329](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220837329.png)
 
 ### ES Module的解析流程
 
-![image-20240104144151252](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240104144151252.png)
+![image-20240119220913698](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240119220913698.png)
 
 # 包管理工具
 

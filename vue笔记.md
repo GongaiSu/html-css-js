@@ -335,3 +335,68 @@
 * 如果要自动过滤用户输入的首尾空白字符，可以给v-model添加 trim 修饰符：
 
   ![image-20240119161241004](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240119161241004.png)
+
+# 组件
+
+## 组件通信
+
+### 父传子
+
+* 在开发中很常见的就是父子组件之间通信，比如父组件有一些数据，需要子组件来进行展示：
+  * 这个时候我们可以通过props来完成组件之间的通信；
+* 什么是Props呢？
+  * Props是你可以在组件上注册一些自定义的attribute；
+  * 父组件给这些attribute赋值，子组件通过attribute的名称获取到对应的值；
+* Props有两种常见的用法：
+  * 方式一：字符串数组，数组中的字符串就是attribute的名称；
+  * 方式二：对象类型，对象类型我们可以在指定attribute名称的同时，指定它需要传递的类型、是否是必须的、默认值等等；
+
+#### Props的对象用法
+
+* 数组用法中我们只能说明传入的attribute的名称，并不能对其进行任何形式的限制，接下来我们来看一下对象的写法是如何让 我们的props变得更加完善的
+* 当使用对象语法的时候，我们可以对传入的内容限制更多：
+  * 比如指定传入的attribute的类型；
+  * 比如指定传入的attribute是否是必传的；
+  * 比如指定没有传入时，attribute的默认值；
+  * ![image-20240121225049334](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240121225049334.png)
+
+##### 细节一：type的类型都可以是哪些
+
+* String
+* Number
+* Boolean
+* Array
+* Object
+* Date
+* Function
+* Symbol
+
+##### 细节二：对象类型的其他写法
+
+![image-20240121225730716](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240121225730716.png)
+
+##### 细节三：Prop 的大小写命名
+
+*  Prop 的大小写命名(camelCase vs kebab-case)
+  * HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符；
+  * 这意味着当你使用 DOM 中的模板时，camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名；
+
+#### 非Prop的Attribute
+
+* 什么是非Prop的Attribute呢？
+  * 当我们传递给一个组件某个属性，但是该属性并没有定义对应的props或者emits时，就称之为 非Prop的Attribute；
+  * 常见的包括class、style、id属性等
+* Attribute继承 
+  * 当组件有单个根节点时，非Prop的Attribute将自动添加到根节点的Attribute中：
+
+![image-20240121230022930](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240121230022930.png)
+
+#### 禁用Attribute继承和多根节点
+
+* 如果我们不希望组件的根元素继承attribute，可以在组件中设置 inheritAttrs: false：
+  * 禁用attribute继承的常见情况是需要将attribute应用于根元素之外的其他元素；
+  * 我们可以通过 $attrs来访问所有的非props的attribute；
+
+* 多个根节点的attribute
+  * 多个根节点的attribute如果没有显示的绑定，那么会报警告，我们必须手动的指定要绑定到哪一个属性上：
+  * ![image-20240121230157122](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240121230157122.png)

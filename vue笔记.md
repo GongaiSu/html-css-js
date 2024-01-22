@@ -400,3 +400,98 @@
 * 多个根节点的attribute
   * 多个根节点的attribute如果没有显示的绑定，那么会报警告，我们必须手动的指定要绑定到哪一个属性上：
   * ![image-20240121230157122](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-js/image-20240121230157122.png)
+
+## 插槽(slot)
+
+### 认识插槽Slot
+
+![image-20240122153428875](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122153428875.png)
+
+### 使用插槽
+
+* 这个时候我们就可以来定义插槽slot：
+
+  * 插槽的使用过程其实是抽取共性、预留不同；
+  * 我们会将共同的元素、内容依然在组件内进行封装；
+  * 同时会将不同的元素使用slot作为占位，让外部决定到底显示什么样的元素；
+
+* 如何使用slot呢？
+
+  * Vue中将元素作为承载分发内容的出口；
+
+  * 在封装组件中，使用特殊的元素就可以为封装组件开启一个插槽；
+
+  * 该插槽插入什么内容取决于父组件如何使用；
+
+    ![image-20240122153546929](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122153546929.png)
+
+### 插槽的默认内容
+
+* 有时候我们希望在使用插槽时，如果没有插入对应的内容，那么我们需要显示一个默认的内容：
+
+  * 当然这个默认的内容只会在没有提供插入的内容时，才会显示；
+
+  ![image-20240122154542744](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122154542744.png)
+
+### 基本使用
+
+![image-20240122154628650](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122154628650.png)
+
+### 具名插槽的使用
+
+* 事实上，我们希望达到的效果是插槽对应的显示，这个时候我们就可以使用 具名插槽：
+  * 具名插槽顾名思义就是给插槽起一个名字， 元素有一个特殊的 attribute：name；
+  * 一个不带 name 的slot，会带有隐含的名字 default；
+
+### 动态插槽名
+
+* 什么是动态插槽名呢？
+  * 目前我们使用的插槽名称都是固定的；
+  * 比如 v-slot:left、v-slot:center等等；
+  * 我们可以通过 v-slot:[dynamicSlotName]方式动态绑定一个名称；
+    ![image-20240122160223682](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122160223682.png)
+
+### 具名插槽使用的时候缩写
+
+* 具名插槽使用的时候缩写：
+
+  * 跟 v-on 和 v-bind 一样，v-slot 也有缩写；
+  * 即把参数之前的所有内容 (v-slot:) 替换为字符 #；
+
+  ![image-20240122160701740](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122160701740.png)
+
+### 渲染作用域
+
+* 在Vue中有渲染作用域的概念： 
+  * 父级模板里的所有内容都是在父级作用域中编译的；
+  * 子模板里的所有内容都是在子作用域中编译的；
+* 如何理解这句话呢？我们来看一个案例： 
+  * 在我们的案例中ChildCpn自然是可以让问自己作用域中的title内容的；
+  * 但是在App中，是访问不了ChildCpn中的内容的，因为它们是跨作用域的访问；
+
+![image-20240122161110945](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122161110945.png)
+
+### 认识作用域插槽
+
+* 但是有时候我们希望插槽可以访问到子组件中的内容是非常重要的： 
+  * 当一个组件被用来渲染一个数组元素时，我们使用插槽，并且希望插槽中没有显示每项的内容；
+  * 这个Vue给我们提供了作用域插槽；
+
+* 我们来看下面的一个案例：
+
+  * 1.在App.vue中定义好数据 
+  * 2.传递给ShowNames组件中
+  * 3.ShowNames组件中遍历names数据
+  * 4.定义插槽的prop
+  * 5.通过v-slot:default的方式获取到slot的props
+  * 6.使用slotProps中的item和index
+
+  ![image-20240122161700370](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122161700370.png)
+
+### 独占默认插槽的缩写
+
+![image-20240122161821911](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122161821911.png)
+
+### 默认插槽和具名插槽混合
+
+![image-20240122161844267](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122161844267.png)

@@ -1,5 +1,16 @@
 <template>
-  <bar-content-vue :barList="['衣服','鞋','玩具']" @btn="btnClick"></bar-content-vue>
+  <bar-content-vue :barList="['衣服','鞋','玩具']" @btn="btnClick">
+  <template v-slot:default="props" >
+    <a>{{ props.item }}</a>
+  </template>
+  
+  </bar-content-vue>
+  <bar-content-vue :barList="['衣服','鞋','玩具']" @btn="btnClick">
+  <template v-slot:default="props" >
+    <button>{{ props.item }}</button>
+  </template>
+  
+  </bar-content-vue>
   <h2>{{ contentList[currIndex] }}</h2>
 </template>
 

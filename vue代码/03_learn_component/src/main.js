@@ -7,6 +7,10 @@ import { createApp } from 'vue'
 // import App from "./06_组件插槽-具名插槽/App.vue"
 // import App from "./07_组件插槽-作用域插槽/App.vue"
 // import App from "./08_provide和inject的使用/App.vue"
-import App from "./09_全局事件总线/App.vue"
+// import App from "./09_全局事件总线/App.vue"
+// import App from "./10_生命周期的演示/App.vue"
+// import App from "./11_ref获取元素组件/App.vue"
+// import App from "./12_动态组件的使用/App.vue"
+import App from "./13_keep-alive的使用/App.vue"
 
 createApp(App).mount('#app')

@@ -495,3 +495,173 @@
 ### 默认插槽和具名插槽混合
 
 ![image-20240122161844267](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240122161844267.png)
+
+## 非父子组件的通信
+
+### 全局事件总线mitt库
+
+* Vue3从实例中移除了 $on、$off 和 $once 方法，所以我们如果希望继续使用全局事件总线，要通过第三方的库：
+  * Vue3官方有推荐一些库，例如 mitt 或 tiny-emitter；
+
+#### 使用事件总线工具
+
+* ![image-20240124093520192](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124093520192.png)
+
+#### Mitt的事件取消
+
+![image-20240124164322081](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124164322081.png)
+
+### Provide和Inject
+
+* Provide/Inject用于非父子组件之间共享数据
+
+  * 比如有一些深度嵌套的组件，子组件想要获取父组件的部分内 容；
+  * 在这种情况下，如果我们仍然将props沿着组件链逐级传递下 去，就会非常的麻烦；
+
+* 对于这种情况下，我们可以使用 Provide 和 Inject ：
+
+  * 无论层级结构有多深，父组件都可以作为其所有子组件的依赖 提供者；
+  * 父组件有一个 provide 选项来提供数据；
+  * 子组件有一个 inject 选项来开始使用这些数据；
+
+* 实际上，你可以将依赖注入看作是“long range props”，除了：
+
+  * 父组件不需要知道哪些子组件使用它 provide 的 property
+  * 子组件不需要知道 inject 的 property 来自哪里
+
+  ![image-20240124164508703](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124164508703.png)
+
+#### Provide和Inject基本使用
+
+![image-20240124164530698](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124164530698.png)
+
+#### Provide和Inject函数的写法
+
+![image-20240124164616915](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124164616915.png)
+
+#### 处理响应式数据
+
+* 我们先来验证一个结果：如果我们修改了this.names的内容，那么使用length的子组件会不会是响应式的？
+
+* 我们会发现对应的子组件中是没有反应的：
+
+  * 这是因为当我们修改了names之后，之前在provide中引入的 this.names.length 本身并不是响应式的；
+
+* 那么怎么样可以让我们的数据变成响应式的呢？
+
+  * 非常的简单，我们可以使用响应式的一些API来完成这些功能，比如说computed函数；
+  * 当然，这个computed是vue3的新特性，在后面我会专门讲解，这里大家可以先直接使用一下；
+
+* 注意：我们在使用length的时候需要获取其中的value
+
+  * 这是因为computed返回的是一个ref对象，需要取出其中的value来使用；(最新版本已经不需要了)
+
+  ![image-20240124164755309](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124164755309.png)
+
+## 生命周期
+
+### 认识生命周期
+
+![image-20240124164844926](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124164844926.png)
+
+### 生命周期的流程
+
+![image-20240124164905455](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124164905455.png)
+
+## $refs的使用
+
+* 某些情况下，我们在组件中想要直接获取到元素对象或者子组件实例：
+  * 在Vue开发中我们是不推荐进行DOM操作的；
+  * 这个时候，我们可以给元素或者组件绑定一个ref的attribute属性；
+
+* 组件实例有一个$refs属性：
+
+  * 它一个对象Object，持有注册过 ref attribute 的所有 DOM 元素和组件实例。
+
+    ![image-20240124165132813](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124165132813.png)
+
+## $parent和$root
+
+![image-20240124165212237](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124165212237.png)
+
+## 动态组件
+
+* 动态组件是使用 component 组件，通过一个特殊的attribute is 来实现：
+
+  ![image-20240124165254422](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124165254422.png)
+
+### 动态组件的传值
+
+![image-20240124170158649](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124170158649.png)
+
+## keep-alive
+
+### 认识keep-alive
+
+![image-20240124170228398](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124170228398.png)
+
+### keep-alive属性
+
+![image-20240124170251198](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124170251198.png)
+
+### 缓存组件的生命周期
+
+![image-20240124170311973](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124170311973.png)
+
+## Webpack的代码分包
+
+![image-20240124172342846](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124172342846.png)
+
+## Vue中实现异步组件
+
+![image-20240124172402846](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124172402846.png)
+
+### 异步组件的写法二
+
+![image-20240124172426400](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124172426400.png)
+
+## 组件的v-model
+
+![image-20240124172446446](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124172446446.png)
+
+### 组件v-model的实现
+
+![image-20240124172506242](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124172506242.png)
+
+### 绑定多个属性
+
+![image-20240124172525449](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124172525449.png)
+
+## Mixin
+
+### 认识Mixin
+
+* 目前我们是使用组件化的方式在开发整个Vue的应用程序，但是组件和组件之间有时候会存在相同的代码逻辑，我们希望对相同 的代码逻辑进行抽取。
+* 在Vue2和Vue3中都支持的一种方式就是使用Mixin来完成：
+  * Mixin提供了一种非常灵活的方式，来分发Vue组件中的可复用功能；
+  * 一个Mixin对象可以包含任何组件选项；
+  * 当组件使用Mixin对象时，所有Mixin对象的选项将被 混合 进入该组件本身的选项中；
+
+### Mixin的基本使用
+
+![image-20240124172642416](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124172642416.png)
+
+### Mixin的合并规则
+
+* 情况一：如果是data函数的返回值对象
+  * 返回值对象默认情况下会进行合并；
+  * 如果data返回值对象的属性发生了冲突，那么会保留组件自身的数据；
+* 情况二：如何生命周期钩子函数 
+  * 生命周期的钩子函数会被合并到数组中，都会被调用；
+* 情况三：值为对象的选项，例如 methods、components 和 directives，将被合并为同一个对象。
+  * 比如都有methods选项，并且都定义了方法，那么它们都会生效；
+  * 但是如果对象的key相同，那么会取组件对象的键值对；
+
+### 全局混入Mixin
+
+* 如果组件中的某些选项，是所有的组件都需要拥有的，那么这个时候我们可以使用全局的mixin：
+
+  * 全局的Mixin可以使用 应用app的方法 mixin 来完成注册；
+  * 一旦注册，那么全局混入的选项将会影响每一个组件；
+
+  ![image-20240124172814921](https://tryora.oss-cn-beijing.aliyuncs.com/html-css-jsimage-20240124172814921.png)

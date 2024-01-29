@@ -206,8 +206,12 @@ export {sayHello} from "./bar.js"
   * npm rebuild
 * 清楚缓存
   * npm cache clean
-
 * 详细文档：https://docs.npmjs.com/cli/v8/commands
+
+### npm设置镜像
+
+* 淘宝镜像:npm config set registry https:*//registry.npmmirror.com*
+* 原有镜像：npm config set registry https:*//registry.npmjs.org*
 
 ## yarn工具
 

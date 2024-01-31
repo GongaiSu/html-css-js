@@ -9,7 +9,7 @@
         @cancel="cancelClick"
       />
       <van-tabs v-model:active="tabactive" color="#ff9864">
-        <template v-for="(value,key,index) in allCities" :key="key">
+        <template v-for="(value,key) in allCities" :key="key">
           <van-tab :title="value.title" :name="key"></van-tab>
         </template>
       </van-tabs>
@@ -20,8 +20,7 @@
 
 
       <template v-for="(value,key,index) in allCities" :key="index">
-        <city-group v-show="tabactive===key" :group-data="value"></city-group>
-        <city-group v-show="tabactive===key" :group-data="value"></city-group>
+        <city-group v-show="tabactive===key" :group-data="value"/>
       </template>
     </div>
   </div>
@@ -36,7 +35,6 @@ import CityGroup from './cpns/city-group.vue'
 
 // 上面的搜索框
   const searchValue = ref("")
-  console.log(searchValue.value)
   const router =  useRouter()
   const cancelClick = ()=>{
     router.back()

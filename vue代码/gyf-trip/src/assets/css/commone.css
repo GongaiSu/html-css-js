@@ -1,6 +1,7 @@
 :root{
   --primary-color:#ff9854;
   --van-search-left-icon-color:var(--primary-color) !important;
+ --line-color: #faf8f9;
 }
 
 
@@ -14,4 +15,7 @@ body{
   height:100vh;
   background-color:#fff;
   overflow-y:auto;
+}
+.bottom-gray-line {
+  border-bottom: 1px solid var(--line-color);
 }

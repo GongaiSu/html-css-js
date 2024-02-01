@@ -11,3 +11,12 @@ export function getCategories(){
     url:"/home/categories"
   })
 }
+
+export function getHouseList(currentPage){
+  return gyfRequest.get({
+    url:"/home/houselist",
+    params:{
+      page:currentPage
+    }
+  })
+}

@@ -15,10 +15,6 @@
       </van-tabs>
     </div>
     <div class="content">
-      
-
-
-
       <template v-for="(value,key,index) in allCities" :key="index">
         <city-group v-show="tabactive===key" :group-data="value"/>
       </template>

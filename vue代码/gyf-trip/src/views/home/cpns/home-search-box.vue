@@ -64,7 +64,7 @@ import {useRouter} from "vue-router"
 import useCityStore from '@/stores/modules/city'
 import useHomeStore from '@/stores/modules/home'
 import {getDateFormatMonthDay,getDiffDays} from '@/utils/getDateFormat'
-import { onBeforeMount, ref } from "vue"
+import {ref} from "vue"
 import { storeToRefs } from "pinia"
 
 const cityStore = useCityStore()

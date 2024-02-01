@@ -1,7 +1,7 @@
 <template>
   <router-view></router-view>
-  <!-- <tab-bar v-if="!route.meta.hideTabBar"></tab-bar> -->
-  <tab-bar></tab-bar>
+  <tab-bar v-if="!route.meta.hideTabBar"></tab-bar>
+  <!-- <tab-bar></tab-bar> -->
 </template>
 
 <script setup>

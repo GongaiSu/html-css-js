@@ -40,12 +40,20 @@
     <!-- 关键字 -->
     <div class="section keyword bottom-gray-line">关键字/位置/民宿名</div>
 
+    <!-- 热门地区 -->
     <div class="section hot-suggests">
-      <template v-for="(item,index) in homeStore.hosSuggests" :key="index">
-        <div>
+      <template v-for="(item,index) in hosSuggests" :key="index">
+        <div 
+          class="item"
+          :style="{color:item.tagText.color, background:item.tagText.background.color}"
+        >
           {{ item.tagText.text }}
         </div>
       </template>
+    </div>
+
+    <div class="section serach-btn">
+      <div class="btn" @click="serachBtn">开始搜索</div>
     </div>
   </div>
   
@@ -56,7 +64,7 @@ import {useRouter} from "vue-router"
 import useCityStore from '@/stores/modules/city'
 import useHomeStore from '@/stores/modules/home'
 import {getDateFormatMonthDay,getDiffDays} from '@/utils/getDateFormat'
-import { ref } from "vue"
+import { onBeforeMount, ref } from "vue"
 import { storeToRefs } from "pinia"
 
 const cityStore = useCityStore()
@@ -76,9 +84,6 @@ const positionClick = ()=>{
 
 // 时间选择
 const showDate = ref(false)
-
-
-
 const date =  new Date()
 const startDate = ref(getDateFormatMonthDay(date))
 const nextDate = new Date()
@@ -87,8 +92,6 @@ const endDate = ref(getDateFormatMonthDay(nextDate))
 
 const stayDate = ref(getDiffDays(date,nextDate))
 
-
-
 const onConfirm = (values)=>{
   startDate.value = getDateFormatMonthDay(values[0])
   endDate.value = getDateFormatMonthDay(values[1])
@@ -96,12 +99,20 @@ const onConfirm = (values)=>{
   showDate.value =false
 }
 
-
+//热门地区
 const homeStore  = useHomeStore()
-homeStore.asyncGetHotSuggests()
-const hosSuggests =ref(homeStore.hosSuggests)
-console.log(hosSuggests)
+const {hosSuggests} =storeToRefs(homeStore)
 
+// 搜索按钮
+const serachBtn = ()=>{
+  router.push({
+    path:'/search',
+    query:{
+      startDate: startDate.value,
+      endDate:endDate.value
+    }
+  })
+}
 
 </script>
 
@@ -196,5 +207,32 @@ console.log(hosSuggests)
     border-right: 1px solid  var(--line-color);
   }
 }
+
+.hot-suggests{
+  margin: 10px 0;
+  height: auto;
+  .item{
+    padding: 4px 8px;
+    margin: 4px;
+    border-radius: 14px;
+    font-size: 12px;
+  }
+}
+
+.serach-btn{
+  .btn{
+    width: 324px;
+    height: 38px;
+    max-width: 500px;
+    
+    text-align: center;
+    font-size: 18px;
+    line-height: 38px;
+    color: #fff;
+    border-radius: 20px;
+    background-image: var(--theme-linear-gradient)
+  }
+}
+
 
 </style>

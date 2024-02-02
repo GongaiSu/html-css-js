@@ -2,7 +2,7 @@
   <div class="item">
     <div class="item-inner">
       <div class="cover">
-        <img :src="itemData.image.url" alt="">
+        <img :src="itemData?.image?.url" alt="">
       </div>
       <div class="infos">
         <div class="location">
@@ -14,7 +14,7 @@
         <div class="price">
           <div class="new">￥{{ itemData.finalPrice }}</div>
           <div class="old">￥{{ itemData.productPrice }}</div>
-          <div class="tip">{{ itemData.priceTipBadge.text }}</div>
+          <div class="tip">{{ itemData?.priceTipBadge?.text }}</div>
         </div>
       </div>
     </div>

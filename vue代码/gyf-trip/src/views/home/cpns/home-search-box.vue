@@ -20,14 +20,14 @@
       <div class="start">
         <div class="date">
           <span class="tip">入住</span>
-          <span class="time">{{ startDate }}</span>
+          <span class="time">{{ startDateStr }}</span>
         </div>
         <div class="stay">共{{stayDate}}晚</div>
       </div>
       <div class="end">
         <div class="date">
           <span class="tip">离店</span>
-          <span class="time">{{ endDate }}</span>
+          <span class="time">{{ endDateStr }}</span>
         </div>
       </div>
     </div>
@@ -63,8 +63,9 @@
 import {useRouter} from "vue-router"
 import useCityStore from '@/stores/modules/city'
 import useHomeStore from '@/stores/modules/home'
+import useMainStore from '@/stores/modules/main'
 import {getDateFormatMonthDay,getDiffDays} from '@/utils/getDateFormat'
-import {ref} from "vue"
+import {computed, ref} from "vue"
 import { storeToRefs } from "pinia"
 
 const cityStore = useCityStore()
@@ -83,18 +84,20 @@ const positionClick = ()=>{
 
 
 // 时间选择
-const showDate = ref(false)
-const date =  new Date()
-const startDate = ref(getDateFormatMonthDay(date))
-const nextDate = new Date()
-nextDate.setDate(nextDate.getDate()+1)
-const endDate = ref(getDateFormatMonthDay(nextDate))
+const mainStore = useMainStore()
 
-const stayDate = ref(getDiffDays(date,nextDate))
+const {startDate,endDate} = storeToRefs(mainStore)
+
+const showDate = ref(false)
+const startDateStr = computed(()=>getDateFormatMonthDay(startDate.value))
+const endDateStr = computed(()=>getDateFormatMonthDay(endDate.value))
+
+
+const stayDate = ref(getDiffDays(startDate.value,endDate.value))
 
 const onConfirm = (values)=>{
-  startDate.value = getDateFormatMonthDay(values[0])
-  endDate.value = getDateFormatMonthDay(values[1])
+  mainStore.startDate = values[0]
+  mainStore.endDate = values[1]
   stayDate.value = getDiffDays(values[0],values[1])
   showDate.value =false
 }

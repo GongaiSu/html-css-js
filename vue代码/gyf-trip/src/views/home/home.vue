@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" ref="homeRef">
     <nav-bar/>
     <div class="banner">
       <img src="@/assets/img/home/banner.webp" alt="">
@@ -21,14 +21,14 @@ import HomeContent from"./cpns/home-content.vue"
 import useHomeStore from "@/stores/modules/home";
 import SearchBar from "@/components/search-bar/search-bar.vue"
 import useScroll from "@/hooks/useScroll"
-import { computed, watch } from "vue";
+import { computed, onActivated, ref, watch } from "vue";
 const homeStore  = useHomeStore()
 homeStore.asyncGetHotSuggests()
 homeStore.asyncGetCategories()
 homeStore.asyncGetHouseList()
 
-
-const {isReachBottom,scrollTop} = useScroll()
+const homeRef = ref()
+const {isReachBottom,scrollTop} = useScroll(homeRef)
 
 watch(isReachBottom,(newValue)=>{
   if(newValue){
@@ -40,13 +40,20 @@ watch(isReachBottom,(newValue)=>{
 const showScrollTop = computed(()=>{
   return scrollTop.value > 500
 })
-
+onActivated(()=>{
+  homeRef.value.scrollTo({
+    top:scrollTop.value
+  })
+})
 
 </script>
 
 <style lang="less" scoped>
 
   .home{
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
     padding-bottom: 60px;
     .banner{
       img{

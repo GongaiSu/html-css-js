@@ -1,4 +1,4 @@
-import { onMounted, onUnmounted, ref } from "vue";
+import { onActivated, onDeactivated, onMounted, onUnmounted, ref } from "vue";
 import {throttle} from "underscore"
 
 
@@ -37,6 +37,10 @@ export default function useScroll(elRef){
     el.addEventListener("scroll",scrollListener)
   })
   onUnmounted(()=>{
+    el.removeEventListener("scroll",scrollListener)
+  })
+
+  onDeactivated(()=>{
     el.removeEventListener("scroll",scrollListener)
   })
 

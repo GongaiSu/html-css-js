@@ -11,7 +11,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: '2018'
   },
   rules: {
     '@typescript-eslint/no-unused-vars': 'off',

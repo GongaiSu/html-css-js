@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,6 +16,19 @@ export default defineConfig({
     }),
     Components({
       resolvers: [ElementPlusResolver()]
+    }),
+    createStyleImportPlugin({
+      resolves: [ElementPlusResolve()],
+      libs: [
+        // 如果没有你需要的resolve，可以在lib内直接写，也可以给我们提供PR
+        {
+          libraryName: 'element-plus',
+          esModule: true,
+          resolveStyle: (name: string) => {
+            return `element-plus/es/components/${name}/style/index`
+          }
+        }
+      ]
     })
   ],
   resolve: {

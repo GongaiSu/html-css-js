@@ -22,10 +22,14 @@ import { reactive, ref } from 'vue'
 import type { FormRules, ElForm } from 'element-plus'
 import type { IAccountType } from '@/types/index'
 import useLoginStore from '@/store/login/login'
+import { localCache } from '@/utils/cache'
+
+const CACHE_USERNAME = 'username'
+const CACHE_PASSWORD = 'password'
 
 const accountFrom = reactive<IAccountType>({
-  username: '',
-  password: ''
+  username: localCache.getItem(CACHE_USERNAME) ?? '',
+  password: localCache.getItem(CACHE_PASSWORD) ?? ''
 })
 
 //定义校验规则
@@ -37,13 +41,21 @@ const accountRules: FormRules = {
 //登录方法
 const loginStore = useLoginStore()
 const formRef = ref<InstanceType<typeof ElForm>>()
-function loginActive() {
+function loginActive(RemPwd: boolean) {
   formRef.value?.validate((valid) => {
     if (valid) {
       const username = accountFrom.username
       const password = accountFrom.password
 
-      loginStore.accountLogin({ username, password })
+      loginStore.accountLogin({ username, password }).then(() => {
+        if (RemPwd) {
+          localCache.setItem(CACHE_USERNAME, username)
+          localCache.setItem(CACHE_PASSWORD, password)
+        } else {
+          localCache.removeItem(CACHE_USERNAME)
+          localCache.removeItem(CACHE_PASSWORD)
+        }
+      })
     } else {
       ElMessage({
         showClose: true,

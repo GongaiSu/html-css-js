@@ -1,16 +1,19 @@
 <template>
   <div class="main">
-    <h2>main {{ counterStore.counter }} -- {{ counterStore.doubleCounter }}</h2>
-    <button @click="changeCounter">变成120</button>
+    <h2>main</h2>
+    <button @click="logoutClick">退出登录</button>
   </div>
 </template>
 
 <script setup lang="ts">
-import useCounterStore from '@/store/counter'
-const counterStore = useCounterStore()
+import { LOGIN_TOKEN } from '@/global/constant'
+import { useRouter } from 'vue-router'
 
-const changeCounter = () => {
-  counterStore.changeCounterAction(120)
+const router = useRouter()
+
+const logoutClick = () => {
+  localStorage.removeItem(LOGIN_TOKEN)
+  router.push('/login')
 }
 </script>
 

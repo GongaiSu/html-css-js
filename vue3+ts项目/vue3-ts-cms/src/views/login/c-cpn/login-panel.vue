@@ -40,17 +40,30 @@
 </template>
 
 <script setup lang="ts">
+import { watch } from 'vue'
 import paneAccount from './pane-account.vue'
 import panePhone from './pane-phone.vue'
 import { ref } from 'vue'
+import { localCache } from '@/utils/cache'
 
 const activeName = ref('account')
-const RemPwd = ref(false)
+const RemPwd = ref<boolean>(localCache.getItem('RemPwd') ?? false)
+watch(RemPwd, (newValue) => {
+  if (newValue) {
+    localCache.setItem('RemPwd', newValue)
+  } else {
+    localCache.removeItem('RemPwd')
+  }
+})
 const accountRef = ref()
 
 //登录按钮操作
 function loginBtn() {
-  accountRef.value.loginActive()
+  if (activeName.value === 'account') {
+    accountRef.value.loginActive(RemPwd.value)
+  } else {
+    console.log(1111)
+  }
 }
 </script>
 

@@ -30,7 +30,7 @@ class Cache {
   }
 }
 
-const loaclCache = new Cache(CacheType.Local)
+const localCache = new Cache(CacheType.Local)
 const sessionCache = new Cache(CacheType.Session)
 
-export { loaclCache, sessionCache }
+export { localCache, sessionCache }

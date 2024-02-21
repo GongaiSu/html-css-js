@@ -16,3 +16,15 @@ export function accountIsLoginActive(token: string) {
     }
   })
 }
+
+export function getUserInfoById(id: number) {
+  return gyfRequest.get({
+    url: '/users/' + id
+  })
+}
+
+export function getMenuByRoleId(id: number) {
+  return gyfRequest.get({
+    url: `/role/${id}/menu`
+  })
+}

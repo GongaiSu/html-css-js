@@ -9,6 +9,7 @@ import {
 import { localCache } from '@/utils/cache'
 import { LOGIN_TOKEN } from '@/global/constant'
 import router from '@/router'
+import { mapMenusToRoutes } from '@/utils/map-menu'
 
 interface IState {
   token: string
@@ -18,9 +19,9 @@ interface IState {
 
 const useLoginStore = defineStore('login', {
   state: (): IState => ({
-    token: localCache.getItem(LOGIN_TOKEN) ?? '',
-    userInfo: localCache.getItem('userInfo') ?? {},
-    userMenus: localCache.getItem('userMenus') ?? {}
+    token: '',
+    userInfo: {},
+    userMenus: {}
   }),
   actions: {
     async accountLogin(account: IAccountType) {
@@ -38,12 +39,31 @@ const useLoginStore = defineStore('login', {
       localCache.setItem('userInfo', this.userInfo)
       localCache.setItem('userMenus', this.userMenus)
 
+      const routers = mapMenusToRoutes(this.userMenus)
+      routers.forEach((item) => {
+        router.addRoute('main', item)
+      })
+
       router.push('/main')
     },
 
     async accountIsLogin() {
       const res = await accountIsLoginActive(this.token)
       return res
+    },
+    loadLocalCacheAction() {
+      const token = localCache.getItem(LOGIN_TOKEN)
+      const userInfo = localCache.getItem('userInfo')
+      const userMenus = localCache.getItem('userMenus')
+      if (token && userInfo && userMenus) {
+        this.token = token
+        this.userInfo = userInfo
+        this.userMenus = userMenus
+      }
+      const routers = mapMenusToRoutes(this.userMenus)
+      routers.forEach((item) => {
+        router.addRoute('main', item)
+      })
     }
   }
 })

@@ -15,7 +15,9 @@
               <span>{{ subMenu.name }}</span>
             </template>
             <template v-for="item in subMenu.children" :key="item.id">
-              <el-menu-item :index="item.id + ''">{{ item.name }}</el-menu-item>
+              <el-menu-item :index="item.id + ''" @click="handerRouter(item)">{{
+                item.name
+              }}</el-menu-item>
             </template>
           </el-sub-menu>
         </template>
@@ -26,6 +28,7 @@
 
 <script setup lang="ts">
 import useLoginStore from '@/store/login/login'
+import { useRouter } from 'vue-router'
 
 defineProps({
   isFold: {
@@ -36,7 +39,12 @@ defineProps({
 
 const loginStore = useLoginStore()
 const userMenus = loginStore.userMenus
-console.log(loginStore.userMenus)
+
+const router = useRouter()
+function handerRouter(item: any) {
+  console.log(item)
+  router.push(item.url)
+}
 </script>
 
 <style lang="less" scoped>

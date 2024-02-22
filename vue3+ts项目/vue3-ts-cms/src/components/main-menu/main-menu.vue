@@ -5,7 +5,7 @@
       <span v-show="!isFold" class="title">后台管理系统</span>
     </div>
     <div class="menu">
-      <el-menu default-active="39" :collapse="isFold">
+      <el-menu :default-active="defaultActive" :collapse="isFold">
         <template v-for="subMenu in userMenus" :key="subMenu.id">
           <el-sub-menu :index="subMenu.id + ''">
             <template #title>
@@ -28,7 +28,9 @@
 
 <script setup lang="ts">
 import useLoginStore from '@/store/login/login'
-import { useRouter } from 'vue-router'
+import { mapPathToMenu } from '@/utils/map-menu'
+import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 defineProps({
   isFold: {
@@ -45,6 +47,14 @@ function handerRouter(item: any) {
   console.log(item)
   router.push(item.url)
 }
+
+//根据路径找到对应的菜单
+
+const route = useRoute()
+const defaultActive = computed(() => {
+  const meun = mapPathToMenu(route.path, userMenus)
+  return meun.id + ''
+})
 </script>
 
 <style lang="less" scoped>

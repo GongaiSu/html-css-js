@@ -1,6 +1,7 @@
 import axios from 'axios'
 import type { AxiosInstance, AxiosResponse } from 'axios'
 import type { IConfig } from './type'
+import useLoadingStore from '@/store/loading/loading'
 
 class GYFRequest {
   instance: AxiosInstance
@@ -8,6 +9,7 @@ class GYFRequest {
     this.instance = axios.create(config)
     this.instance.interceptors.request.use(
       (config) => {
+        console.log(1111111)
         return config
       },
       (err) => {

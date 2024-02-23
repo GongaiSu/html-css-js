@@ -1,13 +1,13 @@
 <template>
-  <div class="login" v-loading="loginStore.isLoading">
+  <div class="login" v-loading="loadingStore.isLoading">
     <login-panel></login-panel>
   </div>
 </template>
 
 <script setup lang="ts">
-import useLoginStore from '@/store/login/login';
+import useLoadingStore from '@/store/loading/loading'
 import LoginPanel from './c-cpn/login-panel.vue'
-const loginStore = useLoginStore()
+const loadingStore = useLoadingStore()
 </script>
 
 <style lang="less" scoped>

@@ -41,27 +41,33 @@
     </el-form>
     <div class="btn">
       <el-button icon="Refresh" @click="handerRefresh">重置</el-button>
-      <el-button type="primary" icon="search">查询</el-button>
+      <el-button type="primary" icon="search" @click="queryList">查询</el-button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import useSystemStore from '@/store/system/system'
 import type { ElForm } from 'element-plus'
+import { storeToRefs } from 'pinia'
 import { reactive, ref } from 'vue'
 
-const formData = reactive({
-  name: '',
-  realname: '',
-  cellphone: '',
-  enable: 1,
-  createAt: ''
-})
+const emits = defineEmits(['searchList', 'resetList'])
+
+const systemStore = useSystemStore()
+
+const { formData } = storeToRefs(systemStore)
 
 //重置
 const formRef = ref<InstanceType<typeof ElForm>>()
 function handerRefresh() {
   formRef.value?.resetFields()
+  emits('resetList')
+}
+
+//查询
+function queryList() {
+  emits('searchList', formData.value)
 }
 </script>
 

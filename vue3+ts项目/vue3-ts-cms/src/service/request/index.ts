@@ -2,7 +2,6 @@ import axios from 'axios'
 import type { AxiosInstance, AxiosResponse } from 'axios'
 import type { IConfig } from './type'
 import useLoadingStore from '@/store/loading/loading'
-
 class GYFRequest {
   instance: AxiosInstance
   constructor(config: IConfig) {
@@ -37,6 +36,8 @@ class GYFRequest {
   }
 
   request<T = any>(config: IConfig) {
+    const loadingStore = useLoadingStore()
+    loadingStore.isLoading = true
     //单次网络请求进行拦截
     if (config.interceptor?.requestFailureFn) {
       config = config.interceptor.requestFailureFn(config)
@@ -49,20 +50,22 @@ class GYFRequest {
           if (config.interceptor?.responseSuccessFn) {
             res = config.interceptor.responseSuccessFn<T>(res)
           }
+          loadingStore.isLoading = false
           resolve(res)
         })
         .catch((err) => {
+          loadingStore.isLoading = false
           reject(err)
         })
     })
   }
 
   get<T = any>(config: IConfig) {
-    return this.instance.request({ ...config, method: 'GET' })
+    return this.request({ ...config, method: 'GET' })
   }
 
   post<T = any>(config: IConfig) {
-    return this.instance.request({ ...config, method: 'POST' })
+    return this.request({ ...config, method: 'POST' })
   }
 }
 

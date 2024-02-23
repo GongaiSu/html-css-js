@@ -1,11 +1,8 @@
 import gyfRequest from '..'
 
-export function postUserInfoList() {
+export function postUserInfoList(dataConfig: any) {
   return gyfRequest.post({
     url: '/users/list',
-    data: {
-      offset: 0,
-      size: 10
-    }
+    data: dataConfig
   })
 }

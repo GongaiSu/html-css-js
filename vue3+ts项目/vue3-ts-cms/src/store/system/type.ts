@@ -10,7 +10,16 @@ export interface IUserList {
   updateAt: string
 }
 
+export interface IFormData {
+  name: string
+  realname: string
+  cellphone: string
+  enable: number
+  createAt: string
+}
+
 export interface IStore {
   userList: IUserList[]
   totalCount: number
+  formData: IFormData
 }

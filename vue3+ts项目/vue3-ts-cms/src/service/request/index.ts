@@ -67,6 +67,13 @@ class GYFRequest {
   post<T = any>(config: IConfig) {
     return this.request({ ...config, method: 'POST' })
   }
+
+  delete<T = any>(config: IConfig) {
+    return this.request({ ...config, method: 'DELETE' })
+  }
+  patch<T = any>(config: IConfig) {
+    return this.request({ ...config, method: 'PATCH' })
+  }
 }
 
 export default GYFRequest

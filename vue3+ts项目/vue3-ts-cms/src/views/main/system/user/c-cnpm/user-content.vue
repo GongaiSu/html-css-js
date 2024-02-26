@@ -2,7 +2,7 @@
   <div class="user-content">
     <div class="header">
       <div class="title">用户列表</div>
-      <el-button type="primary" icon="Plus">新增用户</el-button>
+      <el-button type="primary" icon="Plus" @click="installUserBtn">新增用户</el-button>
     </div>
     <div class="table">
       <el-table :data="userList" border style="width: 100%" v-loading="loadingStore.isLoading">
@@ -29,8 +29,14 @@
           </template>
         </el-table-column>
         <el-table-column align="center" label="操作" width="150">
-          <el-button text type="primary" icon="Edit">编辑</el-button>
-          <el-button text type="danger" icon="Delete">删除</el-button>
+          <template #default="scope">
+            <el-button text type="primary" icon="Edit" @click="userUpdateBtn(scope.row)">
+              编辑
+            </el-button>
+            <el-button text type="danger" icon="Delete" @click="userDeleteBtn(scope.row.id)">
+              删除
+            </el-button>
+          </template>
         </el-table-column>
       </el-table>
     </div>
@@ -50,15 +56,29 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import useSystemStore from '@/store/system/system'
 import { storeToRefs } from 'pinia'
+import useSystemStore from '@/store/main/system/system'
 import useLoadingStore from '@/store/loading/loading'
 import { formatDate } from '@/utils/format'
 
+const emits = defineEmits(['newUserBtn', 'updateUserBtn'])
 const loadingStore = useLoadingStore()
 const systemStore = useSystemStore()
 const currentPage = ref(1)
 const pageSize = ref(10)
+
+systemStore.$onAction((arg) => {
+  arg.after(() => {
+    if (
+      arg.name === 'deleteUserByIdActive' ||
+      arg.name === 'installUserActive' ||
+      arg.name === 'updateUserActive'
+    ) {
+      currentPage.value = 1
+      pageSize.value = 10
+    }
+  })
+})
 fetchUserListData()
 
 const { userList, totalCount, formData } = storeToRefs(systemStore)
@@ -78,6 +98,17 @@ function fetchUserListData(formData?: any) {
 
   const dataConfig = { size, offset, ...formData }
   systemStore.postUserInfoListActive(dataConfig)
+}
+//删除\编辑\新增
+function userDeleteBtn(userId: number) {
+  systemStore.deleteUserByIdActive(userId)
+}
+function userUpdateBtn(user: any) {
+  emits('updateUserBtn', user)
+}
+
+function installUserBtn() {
+  emits('newUserBtn')
 }
 
 defineExpose({ fetchUserListData })

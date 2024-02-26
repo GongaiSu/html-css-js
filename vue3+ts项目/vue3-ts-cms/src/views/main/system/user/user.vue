@@ -1,7 +1,12 @@
 <template>
   <div class="user">
     <user-search @search-list="handerSearchList" @reset-list="handerResetList"></user-search>
-    <user-content ref="userContentRef"></user-content>
+    <user-content
+      ref="userContentRef"
+      @new-user-btn="newUserBtnActive"
+      @update-user-btn="updateUserBtnActive"
+    />
+    <user-modal ref="userModalRef" />
   </div>
 </template>
 
@@ -9,6 +14,7 @@
 import { ref } from 'vue'
 import userSearch from './c-cnpm/user-search.vue'
 import userContent from './c-cnpm/user-content.vue'
+import userModal from './c-cnpm/user-modal.vue'
 
 const userContentRef = ref<InstanceType<typeof userContent>>()
 function handerSearchList(formData: any) {
@@ -16,6 +22,14 @@ function handerSearchList(formData: any) {
 }
 function handerResetList() {
   userContentRef.value?.fetchUserListData()
+}
+
+const userModalRef = ref<InstanceType<typeof userModal>>()
+function newUserBtnActive() {
+  userModalRef.value?.showDialog()
+}
+function updateUserBtnActive(user: any) {
+  userModalRef.value?.showDialog(false, user)
 }
 </script>
 

@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import useSystemStore from '@/store/system/system'
+import useSystemStore from '@/store/main/system/system'
 import type { ElForm } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { reactive, ref } from 'vue'
